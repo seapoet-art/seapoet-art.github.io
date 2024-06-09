@@ -154,7 +154,7 @@ a {
   -ms-flex: 0 auto;
   flex: 0 auto;
   background-image: url('../images/bookcover.jpg');
-  background-position: 50% 50%;
+  background-position: 0% 0%;
   background-size: cover;
   -o-object-fit: cover;
   object-fit: cover;
