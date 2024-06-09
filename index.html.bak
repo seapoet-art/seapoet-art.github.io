@@ -36,7 +36,7 @@ body {
             <div class="text-block-2">Connect</div>
             <ul role="list" class="list w-list-unstyled">
               <li>
-                <a href="https://www.amazon.com/dp/B0CRP38R2D?ref_=pe_93986420_774957520">Buy Now on Amazon</a>
+                <a href="https://www.amazon.com/dp/B0CRP38R2D?ref_=pe_93986420_774957520" target="_blank">Buy Now on Amazon</a>
               </li>
             </ul>
           </div>
@@ -44,10 +44,10 @@ body {
             <div class="text-block-2">Social</div>
             <ul role="list" class="list w-list-unstyled">
               <li>
-                <a href="https://www.instagram.com/seapoet.art/" target="_top">Seapoet on Instagram</a>
+                <a href="https://www.instagram.com/seapoet.art/" target="_blank">Seapoet on Instagram</a>
               </li>
               <li>
-                <a href="https://www.facebook.com/louise.w.hayes">Louise on Facebook</a>
+                <a href="https://www.facebook.com/louise.w.hayes" target="_blank">Louise on Facebook</a>
               </li>
             </ul>
           </div>
