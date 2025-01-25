@@ -1,1 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Louise Hayes - Disintegrating Into Adulthood</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #0b1c2f;
+    }
+	.full-container {
+	  display: flex;
+	  flex-direction: column;
+	  margin: 50px;
+	}
+    .container {
+      display: flex;
+	  flex-direction: row;
+      max-width: 1000px;
+      <!- background-color: white; ->
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+    .book-cover {
+      flex: 1;
+      background-image: url('images/bookcover.jpg');
+      background-size: 110%;
+	  background-repeat: no-repeat;
+      background-position: center;
+    }
+	.author-photo {
+      flex: 1;
+      background-image: url('images/louise.jpg');
+      background-size: 110%;
+	  background-repeat: no-repeat;
+      background-position: center;
+    }
+    .content {
+      flex: 1;
+      padding: 50px;
+	  color: #848d96;
+    }
+    h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+	  text-align: center;
+	  color: #ddd;
+    }
+	h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+	  color: #ddd;
+    }
+    p {
+      font-size: 18px;
+      line-height: 1.5;
+    }
+    .button-container {
+      margin-top: 20px;
+    }
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #47bec7;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+      margin-right: 10px;
+    }
+    .button:hover {
+      background-color: #0056b3;
+    }
+	@media (max-width: 600px) {
+    .full-container {
+	    display: flex;
+	    flex-direction: column;
+	    margin: 20px;
+	  }
+    .container {
+      flex-direction: column;
+    }
+    .book-cover {
+	    flex: none;
+		  background-image: url('images/bookcover_cropped.jpg');
+		  height: 400px;
+		  background-position-y: 100%;
+	  }
+    .content {
+      flex: none;
+      width: 90%;
+    }
+    .content {
+      padding: 20px;
+    }
+	  .author-photo {
+      flex: none;
+      background-image: url('images/louise.jpg');
+      height: 400px;
+		  background-position-y: 100%;
+    }
+  }
+  </style>
+</head>
+<body>
+  <div class="full-container">
+    <div class="container">
+      <div class="book-cover"></div>
+      <div class="content">
+        <h1>DISINTEGRATING INTO ADULTHOOD</h1>
+	    <h2>My journey through the abyss of anorexia and alcoholism, and how I walked, and wrote, myself well</h2>
+        <p>Unfiltered personal account of one woman’s battle with anorexia and alcoholism, told with insightful detail, captivating prose, and passionately raw poetry. Spread over the course of four decades, the book digs into the ravages of mental illness: from the tumultuous teenage years burdened by an unattainable quest for perfection, to the turbulent journey towards love and marriage and motherhood, and the subsequent unraveling into full-blown alcoholism that almost claimed her life. A tale of personal self-discovery and growth, along a teetering and unpredictable road to recovery, and eventual sustained sobriety, it thoroughly encapsulates the intense struggles so many women face to find meaningful purpose in this chaotic and confusing world.</p>
+        <div class="button-container">
+          <a href="https://www.amazon.com/dp/B0CRP38R2D?ref_=pe_93986420_774957520" class="button" target="_blank">Buy on Amazon</a>
+          <a href="https://www.instagram.com/seapoet.art/" class="button" target="_blank">Instagram</a>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+	    <div class="content">
+		    <h2>About the Author</h2>
+		    <p>Louise Wilhelmiene Hayes is a writer and poet, the undisputed manager of everything in her household, an avid plant-based cook and creative baker, a lover of 90s alternative music, and a believer that long walks (preferably at the beach) make every day better. She currently resides in a small house in Boca Raton, Florida with her husband and their two teenagers.</p>
+	    </div>
+	    <div class="author-photo"></div>
+    </div>
+    <div class="container">
+	    <div class="content">
+        <table>
+          <tr>
+            <td>
+              <!-- Insert Thumbnails of print images -->
+            </td>
+            <td>
+              
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="content">
+		    <h2>Poetry Prints</h2>
+		    <p>Poetry Prints Blah Blah Blah</p>
+	    </div>
+	    
+    </div>
+  </div>
+</body>
+</html>
 
+<!--
+This code will display the book cover on the left side of the page and the blurb with buttons on the right side. Adjustments have been made to the layout using flexbox for responsiveness and aesthetics.
+-->
