@@ -90,152 +90,53 @@
     </style>
   </head>
   <body>
-<script>
-  let slideIndex = 1;
-  showSlides(slideIndex);
 
-  // Next/previous controls
-  function plusSlides(n) {
-    showSlides(slideIndex += n);
-  }
-
-  // Thumbnail image controls
-  function currentSlide(n) {
-    showSlides(slideIndex = n);
-  }
-
-function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("demo");
-  let captionText = document.getElementById("caption");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-  captionText.innerHTML = dots[slideIndex-1].alt;
-}
-</script>
 <!-- Container for the image gallery -->
 <div class="container">
 
-  <!-- Full-width images with number text -->
-  <div class="mySlides">
-    <div class="numbertext">1 / 12</div>
-      <img src="images/art_is_not_for_keeping.jpg" style="width:60%">
-  </div>
 
-  <div class="mySlides">
-    <div class="numbertext">2 / 12</div>
-      <img src="images/bigger_than_me.jpg" style="width:60%">
-  </div>
-
-  <div class="mySlides">
-    <div class="numbertext">3 / 12</div>
-      <img src="images/bleary_eyed_to_the_sun.JPG" style="width:60%">
-  </div>
-
-  <div class="mySlides">
-    <div class="numbertext">4 / 12</div>
-      <img src="images/dancing_with_angels.JPG" style="width:60%">
-  </div>
-
-  <div class="mySlides">
-    <div class="numbertext">5 / 12</div>
-      <img src="images/legacy.JPG" style="width:60%">
-  </div>
-
-  <div class="mySlides">
-    <div class="numbertext">6 / 12</div>
-      <img src="images/newfound_happy_hour.JPG" style="width:60%">
-  </div>
-
-  <div class="mySlides">
-    <div class="numbertext">7 / 12</div>
-      <img src="images/one_step_at_a_time.jpg" style="width:60%">
-  </div>
-
-  <div class="mySlides">
-    <div class="numbertext">8 / 12</div>
-      <img src="images/sun_kissed.JPG" style="width:60%">
-  </div>
-
-  <div class="mySlides">
-    <div class="numbertext">9 / 12</div>
-      <img src="images/the_artists_curse.JPG" style="width:60%">
-  </div>
-
-  <div class="mySlides">
-    <div class="numbertext">10 / 12</div>
-      <img src="images/the_moments_in_between.JPG" style="width:60%">
-  </div>
-
-  <div class="mySlides">
-    <div class="numbertext">11 / 12</div>
-      <img src="images/to_dream.JPG" style="width:60%">
-  </div>
-
-  <div class="mySlides">
-    <div class="numbertext">12 / 12</div>
-      <img src="images/with_kindness.jpg" style="width:60%">
-  </div>
-
-  <!-- Next and previous buttons -->
-  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-  <!-- Image text -->
-  <div class="caption-container">
-    <p id="caption"></p>
-  </div>
 
   <!-- Thumbnail images -->
   <div class="row">
     <div class="column">
-      <img class="demo cursor" src="images/art_is_not_for_keeping_thumb.jpg" style="width:100%" onclick="currentSlide(1)" alt="Art Is Not For Keeping">
+      <img class="demo cursor" src="images/art_is_not_for_keeping_thumb.jpg" style="width:100%" alt="Art Is Not For Keeping">
     </div>
     <div class="column">
-      <img class="demo cursor" src="images/bigger_than_me_thumb.jpg" style="width:100%" onclick="currentSlide(2)" alt="Bigger Than Me">
+      <img class="demo cursor" src="images/bigger_than_me_thumb.jpg" style="width:100%" alt="Bigger Than Me">
     </div>
     <div class="column">
-      <img class="demo cursor" src="images/bleary_eyed_to_the_sun_thumb.jpg" style="width:100%" onclick="currentSlide(3)" alt="Bleary Eyed To The Sun">
+      <img class="demo cursor" src="images/bleary_eyed_to_the_sun_thumb.jpg" style="width:100%" alt="Bleary Eyed To The Sun">
     </div>
     <div class="column">
-      <img class="demo cursor" src="images/dancing_with_angels_thumb.jpg" style="width:100%" onclick="currentSlide(4)" alt="Dancing With Angels">
-    </div>
-  </div>
-  <div class="row">
-    <div class="column">
-      <img class="demo cursor" src="images/legacy_thumb.jpg" style="width:100%" onclick="currentSlide(5)" alt="Legacy">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="images/newfound_happy_hour_thumb.jpg" style="width:100%" onclick="currentSlide(6)" alt="Newfound Happy Hour">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="images/one_step_at_a_time_thumb.jpg" style="width:100%" onclick="currentSlide(7)" alt="One Step At A Time">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="images/sun_kissed_thumb.jpg" style="width:100%" onclick="currentSlide(8)" alt="Sun Kissed">
+      <img class="demo cursor" src="images/dancing_with_angels_thumb.jpg" style="width:100%" alt="Dancing With Angels">
     </div>
   </div>
   <div class="row">
     <div class="column">
-      <img class="demo cursor" src="images/the_artists_curse_thumb.jpg" style="width:100%" onclick="currentSlide(9)" alt="The Artists Curse">
+      <img class="demo cursor" src="images/legacy_thumb.jpg" style="width:100%" alt="Legacy">
     </div>
     <div class="column">
-      <img class="demo cursor" src="images/the_moments_in_between_thumb.jpg" style="width:100%" onclick="currentSlide(10)" alt="The Moments In Between">
+      <img class="demo cursor" src="images/newfound_happy_hour_thumb.jpg" style="width:100%" alt="Newfound Happy Hour">
     </div>
     <div class="column">
-      <img class="demo cursor" src="images/to_dream_thumb.jpg" style="width:100%" onclick="currentSlide(11)" alt="To Dream">
+      <img class="demo cursor" src="images/one_step_at_a_time_thumb.jpg" style="width:100%" alt="One Step At A Time">
     </div>
     <div class="column">
-      <img class="demo cursor" src="images/with_kindness_thumb.jpg" style="width:100%" onclick="currentSlide(12)" alt="With Kindness">
+      <img class="demo cursor" src="images/sun_kissed_thumb.jpg" style="width:100%" alt="Sun Kissed">
+    </div>
+  </div>
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="images/the_artists_curse_thumb.jpg" style="width:100%" alt="The Artists Curse">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/the_moments_in_between_thumb.jpg" style="width:100%" alt="The Moments In Between">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/to_dream_thumb.jpg" style="width:100%" alt="To Dream">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/with_kindness_thumb.jpg" style="width:100%" alt="With Kindness">
     </div>
   </div>
 </div>
