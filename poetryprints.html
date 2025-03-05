@@ -1,9 +1,27 @@
 <html>
   <head>
+    <title>Louise Hayes - Poetry Prints</title>
     <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #0b1c2f;
+      }
+
+      h1 {
+        font-size: 36px;
+        margin-bottom: 20px;
+	      text-align: center;
+	      color: #ddd;
+      }
+	  
       * {
-  box-sizing: border-box;
-}
+        box-sizing: border-box;
+      } 
 
 /* Position the image container (needed to position the left and right arrows) */
 .container {
@@ -74,13 +92,20 @@
 
 /* Six columns side by side */
 .column {
-  float: left;
-  width: 25%;
+  float: inherit;
+  width: 75%;
+  justify-content: center;
 }
 
 /* Add a transparency effect for thumnbail images */
 .demo {
   opacity: 0.6;
+}
+
+img {
+  height:auto;
+  width:600px;
+  vertical-align: middle;
 }
 
 .active,
@@ -92,53 +117,75 @@
   <body>
 
 <!-- Container for the image gallery -->
-<div class="container">
+    <div class="container">
 
 
-
-  <!-- Thumbnail images -->
-  <div class="row">
-    <div class="column">
-      <img class="demo cursor" src="images/art_is_not_for_keeping_thumb.jpg" style="width:100%; vertical-align:middle;" alt="Art Is Not For Keeping">
+      <h1>POETRY PRINTS</h1>
+            
+      <!-- Thumbnail images -->
+      <div class="row" id="art_is_not_for_keeping">
+        <div class="column">
+          <img class="demo cursor" src="images/art_is_not_for_keeping.jpg" alt="Art Is Not For Keeping">
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
+          <img class="demo cursor" src="images/bigger_than_me.jpg" alt="Bigger Than Me">
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
+          <img class="demo cursor" src="images/bleary_eyed_to_the_sun.jpg" alt="Bleary Eyed To The Sun">
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
+          <img class="demo cursor" src="images/dancing_with_angels.jpg" alt="Dancing With Angels">
+        </div>
+      </div>
+      <div class="row" id="legacy">
+        <div class="column">
+          <img class="demo cursor" src="images/legacy.jpg" alt="Legacy">
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
+          <img class="demo cursor" src="images/newfound_happy_hour.jpg" alt="Newfound Happy Hour">
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
+          <img class="demo cursor" src="images/one_step_at_a_time.jpg" alt="One Step At A Time">
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
+          <img class="demo cursor" src="images/sun_kissed.jpg" alt="Sun Kissed">
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
+          <img class="demo cursor" src="images/the_artists_curse.jpg" alt="The Artists Curse">
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
+          <img class="demo cursor" src="images/the_moments_in_between.jpg" alt="The Moments In Between">
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
+          <img class="demo cursor" src="images/to_dream.jpg" alt="To Dream">
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
+          <img class="demo cursor" src="images/with_kindness.jpg" alt="With Kindness">
+        </div>
+      </div>
+      <a href="index.html"> <h1>HOME</h1> </a>
     </div>
-    <div class="column">
-      <img class="demo cursor" src="images/bigger_than_me_thumb.jpg" style="width:100%; vertical-align:middle;" alt="Bigger Than Me">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="images/bleary_eyed_to_the_sun_thumb.jpg" style="width:100%; vertical-align:middle;" alt="Bleary Eyed To The Sun">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="images/dancing_with_angels_thumb.jpg" style="width:100%; vertical-align:middle;" alt="Dancing With Angels">
-    </div>
-  </div>
-  <div class="row">
-    <div class="column">
-      <img class="demo cursor" src="images/legacy_thumb.jpg" style="width:100%; vertical-align:middle;" alt="Legacy">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="images/newfound_happy_hour_thumb.jpg" style="width:100%; vertical-align:middle;" alt="Newfound Happy Hour">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="images/one_step_at_a_time_thumb.jpg" style="width:100%; vertical-align:middle;" alt="One Step At A Time">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="images/sun_kissed_thumb.jpg" style="width:100%; vertical-align:middle;" alt="Sun Kissed">
-    </div>
-  </div>
-  <div class="row">
-    <div class="column">
-      <img class="demo cursor" src="images/the_artists_curse_thumb.jpg" style="width:100%; vertical-align:middle;" alt="The Artists Curse">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="images/the_moments_in_between_thumb.jpg" style="width:100%; vertical-align:middle;" alt="The Moments In Between">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="images/to_dream_thumb.jpg" style="width:100%; vertical-align:middle;" alt="To Dream">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="images/with_kindness_thumb.jpg" style="width:100%; vertical-align:middle;" alt="With Kindness">
-    </div>
-  </div>
-</div>
+    
+	
   </body>
 </html>
