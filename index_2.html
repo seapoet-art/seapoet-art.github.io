@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Louise Hayes - Disintegrating Into Adulthood</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #0b1c2f;
+    }
+	  .full-container {
+	    display: flex;
+	    flex-direction: column;
+	    margin: 50px;
+	  }
+    .container {
+      display: flex;
+	    flex-direction: row;
+      max-width: 1000px;
+      /* background-color: white; */
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+    .book-cover {
+      flex: 1;
+      background-image: url('images/bookcover.jpg');
+      background-size: 110%;
+	    background-repeat: no-repeat;
+      background-position: center;
+    }
+	  .author-photo {
+      flex: 1;
+      background-image: url('images/louise.jpg');
+      background-size: 110%;
+	    background-repeat: no-repeat;
+      background-position: center;
+    }
+    .content {
+      flex: 1;
+      padding: 50px;
+	    color: #848d96;
+    }
+    h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+	    text-align: center;
+	    color: #ddd;
+    }
+	  h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+	    color: #ddd;
+    }
+    p {
+      font-size: 18px;
+      line-height: 1.5;
+    }
+    .button-container {
+      margin-top: 20px;
+    }
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #47bec7;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+      margin-right: 10px;
+    }
+    .button:hover {
+      background-color: #0056b3;
+    }
+	  @media (max-width: 600px) {
+	    .full-container {
+	      display: flex;
+	      flex-direction: column;
+	      margin: 20px;
+	    }
+      .container {
+        flex-direction: column;
+      }
+      .book-cover {
+	      flex: none;
+		    background-image: url('images/bookcover_cropped.jpg');
+		    height: 400px;
+		    background-position-y: 100%;
+	    }
+      .content {
+        flex: none;
+        width: 90%;
+      }
+      .content {
+        padding: 20px;
+      }
+	    .author-photo {
+        flex: none;
+        background-image: url('images/louise.jpg');
+        height: 400px;
+		    background-position-y: 100%;
+      }
+    }
+
+    @keyframes tonext {
+      75% {
+        left: 0;
+      }
+      95% {
+        left: 100%;
+      }
+      98% {
+        left: 100%;
+      }
+      99% {
+        left: 0;
+      }
+    }
+
+    @keyframes tostart {
+      75% {
+        left: 0;
+      }
+      95% {
+        left: -300%;
+      }
+      98% {
+        left: -300%;
+      }
+      99% {
+        left: 0;
+      }
+    }
+
+    @keyframes snap {
+      96% {
+        scroll-snap-align: center;
+      }
+      97% {
+        scroll-snap-align: none;
+      }
+      99% {
+        scroll-snap-align: none;
+      }
+      100% {
+        scroll-snap-align: center;
+      }
+    }
+
+    
+    * {
+      box-sizing: border-box;
+      scrollbar-color: transparent transparent; /* thumb and track color */
+      scrollbar-width: 0px;
+    }
+
+    *::-webkit-scrollbar {
+      width: 0;
+    }
+
+    *::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    *::-webkit-scrollbar-thumb {
+      background: transparent;
+      border: none;
+    }
+
+    * {
+      -ms-overflow-style: none;
+    }
+
+    ol, li {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .carousel {
+      position: relative;
+      padding-top: 75%;
+      filter: drop-shadow(0 0 10px #0003);
+      perspective: 100px;
+    }
+
+    .carousel__viewport {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      overflow-x: scroll;
+      counter-reset: item;
+      scroll-behavior: smooth;
+      scroll-snap-type: x mandatory;
+    }
+
+    .carousel__slide {
+      position: relative;
+      flex: 0 0 100%;
+      width: 100%;
+      background-color: #f99;
+      counter-increment: item;
+    }
+
+    .carousel__slide:nth-child(even) {
+      background-color: #99f;
+    }
+
+    .carousel__slide:before {
+      /*content: counter(item);*/
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate3d(-50%,-40%,70px);
+      color: #920b0b;
+      font-size: 2em;
+    }
+
+    .carousel__snapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      scroll-snap-align: center;
+    }
+
+    @media (hover: hover) {
+      .carousel__snapper {
+        animation-name: tonext, snap;
+        animation-timing-function: ease;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+      }
+
+      .carousel__slide:last-child .carousel__snapper {
+        animation-name: tostart, snap;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .carousel__snapper {
+        animation-name: none;
+      }
+    }
+
+    .carousel:hover .carousel__snapper,
+    .carousel:focus-within .carousel__snapper {
+      animation-name: none;
+    }
+
+    .carousel__navigation {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      text-align: center;
+    }
+
+    .carousel__navigation-list,
+    .carousel__navigation-item {
+      display: inline-block;
+    }
+
+    .carousel__navigation-button {
+      display: inline-block;
+      width: 1.5rem;
+      height: 1.5rem;
+      background-color: #333;
+      background-clip: content-box;
+      border: 0.25rem solid transparent;
+      border-radius: 50%;
+      font-size: 0;
+      transition: transform 0.1s;
+    }
+
+    .carousel::before,
+    .carousel::after,
+    .carousel__prev,
+    .carousel__next {
+      position: absolute;
+      top: 0;
+      margin-top: 37.5%;
+      width: 4rem;
+      height: 4rem;
+      transform: translateY(-50%);
+      border-radius: 50%;
+      font-size: 0;
+      outline: 0;
+    }
+
+    .carousel::before,
+    .carousel__prev {
+      left: -1rem;
+    }
+
+    .carousel::after,
+    .carousel__next {
+      right: -1rem;
+    }
+
+    .carousel::before,
+    .carousel::after {
+      content: '';
+      z-index: 1;
+      background-color: #333;
+      background-size: 1.5rem 1.5rem;
+      background-repeat: no-repeat;
+      background-position: center center;
+      color: #fff;
+      font-size: 2.5rem;
+      line-height: 4rem;
+      text-align: center;
+      pointer-events: none;
+    }
+
+    .carousel::before {
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,50 80,100 80,0' fill='%23fff'/%3E%3C/svg%3E");
+    }
+
+    .carousel::after {
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='100,50 20,100 20,0' fill='%23fff'/%3E%3C/svg%3E");
+    }
+    img {
+      width: 400px;
+      height: auto;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+  <div class="full-container">
+    <div class="container">
+      <div class="book-cover"></div>
+      <div class="content">
+        <h1>DISINTEGRATING INTO ADULTHOOD</h1>
+	    <h2>My journey through the abyss of anorexia and alcoholism, and how I walked, and wrote, myself well</h2>
+        <p>Unfiltered personal account of one woman's battle with anorexia and alcoholism, told with insightful detail, captivating prose, and passionately raw poetry. Spread over the course of four decades, the book digs into the ravages of mental illness: from the tumultuous teenage years burdened by an unattainable quest for perfection, to the turbulent journey towards love and marriage and motherhood, and the subsequent unraveling into full-blown alcoholism that almost claimed her life. A tale of personal self-discovery and growth, along a teetering and unpredictable road to recovery, and eventual sustained sobriety, it thoroughly encapsulates the intense struggles so many women face to find meaningful purpose in this chaotic and confusing world.</p>
+        <div class="button-container">
+          <a href="https://www.amazon.com/dp/B0CRP38R2D?ref_=pe_93986420_774957520" class="button" target="_blank">Buy on Amazon</a>
+          <a href="https://www.instagram.com/seapoet.art/" class="button" target="_blank">Instagram</a>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+	    <div class="content">
+		    <h2>About the Author</h2>
+		    <p>Louise Wilhelmiene Hayes is a writer and poet, the undisputed manager of everything in her household, an avid plant-based cook and creative baker, a lover of 90s alternative music, and a believer that long walks (preferably at the beach) make every day better. She currently resides in a small house in Boca Raton, Florida with her husband and their two teenagers.</p>
+	    </div>
+	    <div class="author-photo"></div>
+    </div>
+    <div class="container">
+	    <div class="content">
+        <section class="carousel" aria-label="Gallery">
+          <ol class="carousel__viewport">
+            <li id="carousel__slide01"
+                tabindex="0"
+                class="carousel__slide">
+              <div class="carousel__snapper">
+                <a href="#carousel__slide12" class="carousel__prev">Go to last slide</a>
+                   <img src="images/thumbs/01.jpg" >
+                <a href="#carousel__slide02" class="carousel__next">Go to next slide</a>
+              </div>
+            </li>
+            <li id="carousel__slide02"
+                tabindex="0"
+                class="carousel__slide">
+              <div class="carousel__snapper"></div>
+              <a href="#carousel__slide01" class="carousel__prev">Go to previous slide</a>
+                 <img src="images/thumbs/02.jpg" >
+              <a href="#carousel__slide03" class="carousel__next">Go to next slide</a>
+            </li>
+            <li id="carousel__slide03"
+                tabindex="0"
+                class="carousel__slide">
+              <div class="carousel__snapper"></div>
+              <a href="#carousel__slide02" class="carousel__prev">Go to previous slide</a>
+                 <img src="images/thumbs/03.jpg" >
+              <a href="#carousel__slide04" class="carousel__next">Go to next slide</a>
+            </li>
+            <li id="carousel__slide04"
+                tabindex="0"
+                class="carousel__slide">
+              <div class="carousel__snapper"></div>
+              <a href="#carousel__slide03" class="carousel__prev">Go to previous slide</a>
+                 <img src="images/thumbs/04.jpg" >
+              <a href="#carousel__slide05" class="carousel__next">Go to next slide</a>
+            </li>
+            <li id="carousel__slide05"
+                tabindex="0"
+                class="carousel__slide">
+              <div class="carousel__snapper"></div>
+              <a href="#carousel__slide04" class="carousel__prev">Go to previous slide</a>
+                 <img src="images/thumbs/05.jpg">
+              <a href="#carousel__slide06" class="carousel__next">Go to next slide</a>
+            </li>
+            <li id="carousel__slide06"
+                tabindex="0"
+                class="carousel__slide">
+              <div class="carousel__snapper"></div>
+              <a href="#carousel__slide05" class="carousel__prev">Go to previous slide</a>
+                 <img src="images/thumbs/06.jpg" >
+              <a href="#carousel__slide07" class="carousel__next">Go to next slide</a>
+            </li>
+            <li id="carousel__slide07"
+                tabindex="0"
+                class="carousel__slide">
+              <div class="carousel__snapper"></div>
+              <a href="#carousel__slide06" class="carousel__prev">Go to previous slide</a>
+                 <img src="images/thumbs/07.jpg" >
+              <a href="#carousel__slide08" class="carousel__next">Go to next slide</a>
+            </li>
+            <li id="carousel__slide08"
+                tabindex="0"
+                class="carousel__slide">
+              <div class="carousel__snapper"></div>
+              <a href="#carousel__slide07" class="carousel__prev">Go to previous slide</a>
+                 <img src="images/thumbs/08.jpg" >
+              <a href="#carousel__slide09" class="carousel__next">Go to next slide</a>
+            </li>
+            <li id="carousel__slide09"
+                tabindex="0"
+                class="carousel__slide">
+              <div class="carousel__snapper"></div>
+              <a href="#carousel__slide08" class="carousel__prev">Go to previous slide</a>
+                 <img src="images/thumbs/09.jpg" >
+              <a href="#carousel__slide10" class="carousel__next">Go to next slide</a>
+            </li>
+            <li id="carousel__slide10"
+                tabindex="0"
+                class="carousel__slide">
+              <div class="carousel__snapper"></div>
+              <a href="#carousel__slide09" class="carousel__prev">Go to previous slide</a>
+                 <img src="images/thumbs/10.jpg" >
+              <a href="#carousel__slide11" class="carousel__next">Go to next slide</a>
+            </li>
+            <li id="carousel__slide11"
+                tabindex="0"
+                class="carousel__slide">
+              <div class="carousel__snapper"></div>
+              <a href="#carousel__slide10" class="carousel__prev">Go to previous slide</a>
+                 <img src="images/thumbs/11.jpg" >
+              <a href="#carousel__slide12" class="carousel__next">Go to next slide</a>
+            </li>
+            <li id="carousel__slide12"
+                tabindex="0"
+                class="carousel__slide">
+              <div class="carousel__snapper"></div>
+              <a href="#carousel__slide11" class="carousel__prev">Go to previous slide</a>
+                 <img src="images/thumbs/12.jpg" >
+              <a href="#carousel__slide01" class="carousel__next">Go to first slide</a>
+            </li>
+          </ol>
+          <!--<aside class="carousel__navigation">
+            <ol class="carousel__navigation-list">
+              <li class="carousel__navigation-item">
+                <a href="#carousel__slide01"
+                   class="carousel__navigation-button">Go to slide 1</a>
+              </li>
+              <li class="carousel__navigation-item">
+                <a href="#carousel__slide02"
+                   class="carousel__navigation-button">Go to slide 2</a>
+              </li>
+              <li class="carousel__navigation-item">
+                <a href="#carousel__slide03"
+                   class="carousel__navigation-button">Go to slide 3</a>
+              </li>
+              <li class="carousel__navigation-item">
+                <a href="#carousel__slide04"
+                   class="carousel__navigation-button">Go to slide 4</a>
+              </li>
+              <li class="carousel__navigation-item">
+                <a href="#carousel__slide05"
+                   class="carousel__navigation-button">Go to slide 5</a>
+              </li>
+              <li class="carousel__navigation-item">
+                <a href="#carousel__slide06"
+                   class="carousel__navigation-button">Go to slide 6</a>
+              </li>
+              <li class="carousel__navigation-item">
+                <a href="#carousel__slide07"
+                   class="carousel__navigation-button">Go to slide 7</a>
+              </li>
+              <li class="carousel__navigation-item">
+                <a href="#carousel__slide08"
+                   class="carousel__navigation-button">Go to slide 8</a>
+              </li>
+              <li class="carousel__navigation-item">
+                <a href="#carousel__slide09"
+                   class="carousel__navigation-button">Go to slide 9</a>
+              </li>
+              <li class="carousel__navigation-item">
+                <a href="#carousel__slide10"
+                   class="carousel__navigation-button">Go to slide 10</a>
+              </li>
+              <li class="carousel__navigation-item">
+                <a href="#carousel__slide11"
+                   class="carousel__navigation-button">Go to slide 11</a>
+              </li>
+              <li class="carousel__navigation-item">
+                <a href="#carousel__slide12"
+                   class="carousel__navigation-button">Go to slide 12</a>
+              </li>
+            </ol>
+          </aside> -->
+        </section>
+        <a href="poetryprints.html">View Larger</a>
+      </div>
+	    <div class="content">
+		    <h2>Poetry Prints</h2>
+				<p>Designed with images captured while walking and writing at my local beach.  Available for purchase in two different sizes.</p>
+        <div class="button-container">
+          <a href="https://seapoet.square.site" class="button" target="_blank">Shop on Square</a>
+        </div>
+	    </div>
+    </div>
+  </div>
+</body>
+</html>
+
+<!--
+This code will display the book cover on the left side of the page and the blurb with buttons on the right side. Adjustments have been made to the layout using flexbox for responsiveness and aesthetics.
+-->
