@@ -1,0 +1,641 @@
+/* ==========================================================================
+   SEAPOET.ART - Main Stylesheet
+   ========================================================================== */
+
+/* CSS Variables for consistent theming
+   ========================================================================== */
+:root {
+  /* Colors */
+  --primary-bg: #0b1c2f;
+  --primary-text: #848d96;
+  --heading-text: #ddd;
+  --accent-color: #47bec7;
+  --accent-hover: #0056b3;
+  --link-color: #848d96;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  
+  /* Typography */
+  --font-main: Arial, sans-serif;
+  --font-serif: Georgia, serif;
+  
+  /* Spacing */
+  --spacing-xs: 10px;
+  --spacing-sm: 20px;
+  --spacing-md: 40px;
+  --spacing-lg: 60px;
+  --spacing-xl: 120px;
+  
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
+/* Base Styles
+   ========================================================================== */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-main);
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
+  line-height: 1.6;
+  min-height: 100%;
+}
+
+/* Links */
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color var(--transition-normal);
+}
+
+a:hover {
+  color: var(--accent-color);
+}
+
+a:focus {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+/* Typography
+   ========================================================================== */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--heading-text);
+  line-height: 1.2;
+  margin-top: 0;
+}
+
+h1 {
+  font-size: clamp(24px, 5vw, 36px);
+  text-align: center;
+  margin-bottom: var(--spacing-sm);
+}
+
+h2 {
+  font-size: clamp(22px, 4vw, 28px);
+  text-align: center;
+  margin-bottom: var(--spacing-sm);
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-top: 0;
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Screen Reader Only Content */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Loading Overlay
+   ========================================================================== */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity var(--transition-slow);
+}
+
+.loading-overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid var(--accent-color);
+  border-top: 4px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Layout Components
+   ========================================================================== */
+.full-container {
+  display: flex;
+  flex-direction: column;
+  margin: 50px;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  max-width: 1000px;
+  margin: 0 auto var(--spacing-md) auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px var(--shadow-color);
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.02);
+  transition: transform var(--transition-normal);
+}
+
+.container:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(71, 190, 199, 0.1);
+}
+
+.content {
+  flex: 1;
+  padding: 50px;
+}
+
+/* Image Containers
+   ========================================================================== */
+.book-cover,
+.author-photo {
+  flex: 1;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 400px;
+  position: relative;
+}
+
+.book-cover {
+  background-image: url('../images/bookcover_with_award2.jpg');
+}
+
+.author-photo {
+  background-image: url('../images/louise.jpg');
+}
+
+/* For browsers that support WebP */
+@supports (background-image: url('test.webp')) {
+  .book-cover {
+    background-image: url('../images/bookcover_with_award2.webp');
+  }
+  
+  .author-photo {
+    background-image: url('../images/louise.webp');
+  }
+}
+
+/* Buttons
+   ========================================================================== */
+.button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: var(--accent-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  border: 2px solid var(--accent-color);
+  transition: all var(--transition-normal);
+  text-align: center;
+  font-weight: 600;
+  position: relative;
+  overflow: hidden;
+  min-width: 180px;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.button:hover {
+  background-color: var(--accent-hover);
+  border-color: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(71, 190, 199, 0.4);
+}
+
+.button:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.button:focus {
+  outline: 3px solid white;
+  outline-offset: 3px;
+}
+
+.button:active {
+  transform: translateY(0);
+}
+
+/* Carousel / Slideshow
+   ========================================================================== */
+.carousel {
+  position: relative;
+  width: 100%;
+  padding-top: 75%; /* 4:3 Aspect Ratio */
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.carousel__viewport {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  overflow: hidden;
+}
+
+.carousel__slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel__slide.active {
+  opacity: 1;
+  z-index: 2;
+}
+
+.carousel__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Carousel Navigation */
+.carousel__prev,
+.carousel__next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background-color: rgba(71, 190, 199, 0.8);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-normal);
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.carousel__prev {
+  left: 10px;
+}
+
+.carousel__next {
+  right: 10px;
+}
+
+.carousel__prev:hover,
+.carousel__next:hover {
+  background-color: var(--accent-color);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel__prev:focus,
+.carousel__next:focus {
+  outline: 3px solid white;
+  outline-offset: 3px;
+}
+
+/* Carousel Indicators */
+.carousel__indicators {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.carousel__indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.carousel__indicator.active {
+  background-color: var(--accent-color);
+  border-color: white;
+  transform: scale(1.2);
+}
+
+.carousel__indicator:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Carousel Pause/Play Button */
+.carousel__control {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(71, 190, 199, 0.8);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-normal);
+  color: white;
+  font-size: 18px;
+}
+
+.carousel__control:hover {
+  background-color: var(--accent-color);
+  transform: scale(1.1);
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Responsive Design
+   ========================================================================== */
+
+/* Tablet Landscape - Medium Screens */
+@media (max-width: 991px) {
+  .full-container {
+    margin: 30px;
+  }
+  
+  .container {
+    flex-direction: column;
+  }
+  
+  .content {
+    padding: 40px;
+  }
+  
+  .book-cover,
+  .author-photo {
+    min-height: 350px;
+  }
+}
+
+/* Tablet Portrait - Small Screens */
+@media (max-width: 767px) {
+  .full-container {
+    margin: 20px;
+  }
+  
+  .content {
+    padding: 30px;
+  }
+  
+  h1 {
+    font-size: 28px;
+  }
+  
+  h2 {
+    font-size: 22px;
+  }
+  
+  p {
+    font-size: 16px;
+  }
+  
+  .book-cover,
+  .author-photo {
+    min-height: 300px;
+  }
+  
+  .button-container {
+    flex-direction: column;
+  }
+  
+  .button {
+    width: 100%;
+  }
+  
+  .carousel__prev,
+  .carousel__next {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+}
+
+/* Mobile - Extra Small Screens */
+@media (max-width: 600px) {
+  .full-container {
+    margin: 10px;
+  }
+  
+  .content {
+    padding: 20px 15px;
+  }
+  
+  h1 {
+    font-size: 24px;
+  }
+  
+  h2 {
+    font-size: 20px;
+  }
+  
+  p {
+    font-size: 16px;
+  }
+  
+  .book-cover {
+    background-image: url('../images/bookcover_with_award_square.jpeg');
+    background-position: center top;
+    min-height: 250px;
+  }
+  
+  .author-photo {
+    background-position: center top;
+    min-height: 250px;
+  }
+  
+  .button {
+    padding: 10px 18px;
+    font-size: 14px;
+    min-width: auto;
+  }
+  
+  .carousel__prev,
+  .carousel__next {
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+  }
+  
+  .carousel__prev {
+    left: 5px;
+  }
+  
+  .carousel__next {
+    right: 5px;
+  }
+  
+  .carousel__indicators {
+    bottom: 10px;
+    gap: 8px;
+  }
+  
+  .carousel__indicator {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+/* Mobile - Very Small Screens */
+@media (max-width: 400px) {
+  .full-container {
+    margin: 5px;
+  }
+  
+  .content {
+    padding: 15px;
+  }
+  
+  h1 {
+    font-size: 22px;
+  }
+  
+  h2 {
+    font-size: 18px;
+  }
+  
+  .book-cover,
+  .author-photo {
+    min-height: 200px;
+  }
+}
+
+/* Print Styles
+   ========================================================================== */
+@media print {
+  .button,
+  .carousel__prev,
+  .carousel__next,
+  .carousel__indicators,
+  .carousel__control,
+  .loading-overlay {
+    display: none !important;
+  }
+  
+  .container {
+    page-break-inside: avoid;
+  }
+  
+  body {
+    background-color: white;
+    color: black;
+  }
+  
+  h1, h2 {
+    color: black;
+  }
+  
+  a {
+    color: black;
+    text-decoration: underline;
+  }
+}
+
+/* Accessibility - High Contrast Mode */
+@media (prefers-contrast: high) {
+  :root {
+    --primary-text: #ffffff;
+    --heading-text: #ffffff;
+    --accent-color: #00ffff;
+  }
+  
+  .button {
+    border-width: 3px;
+  }
+}
+
+/* Accessibility - Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Dark Mode Support (if user prefers) */
+@media (prefers-color-scheme: light) {
+  /* Keep dark theme even in light mode preference */
+  /* Site is designed for dark theme */
+}

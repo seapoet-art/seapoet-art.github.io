@@ -3,501 +3,234 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Disintegrating Into Adulthood by Louise Hayes - Award-winning memoir about overcoming anorexia and alcoholism. Finalist of Next Generation Indie Book Awards 2025.">
+  <meta name="keywords" content="memoir, addiction recovery, anorexia, alcoholism, mental health, Louise Hayes, poetry, self-help, recovery story">
+  <meta name="author" content="Louise Wilhelmiene Hayes">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://seapoet.art/">
   <meta property="og:title" content="Disintegrating Into Adulthood | Louise Hayes">
+  <meta property="og:description" content="Award-winning memoir about one woman's journey through addiction to recovery. Finalist of Next Generation Indie Book Awards 2025.">
   <meta property="og:image" content="https://seapoet.art/images/bookcover_with_award2.jpg">
-  <link rel="icon" type="image/x-icon" href="./images/favicon.png">
-  <title>Louise Hayes - Disintegrating Into Adulthood</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #0b1c2f;
-    }
-	  .full-container {
-	    display: flex;
-	    flex-direction: column;
-	    margin: 50px;
-	  }
-    .container {
-      display: flex;
-	    flex-direction: row;
-      max-width: 1000px;
-      /* background-color: white; */
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-    }
-    .book-cover {
-      flex: 1;
-      background-image: url('images/bookcover_with_award2.jpg');
-      background-size: 110%;
-	    background-repeat: no-repeat;
-      background-position: center;
-    }
-	  .author-photo {
-      flex: 1;
-      background-image: url('images/louise.jpg');
-      background-size: 110%;
-	    background-repeat: no-repeat;
-      background-position: center;
-    }
-    .content {
-      flex: 1;
-      padding: 50px;
-	    color: #848d96;
-    }
-    h1 {
-      font-size: 36px;
-      margin-bottom: 20px;
-	    text-align: center;
-	    color: #ddd;
-    }
-	  h2 {
-      font-size: 28px;
-      margin-bottom: 20px;
-	    color: #ddd;
-      text-align: center;
-    }
-    p {
-      font-size: 18px;
-      line-height: 1.5;
-    }
-    .button-container {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      
-    }
-    .button {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: #47bec7;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      border-color: #fff;
-      border-width: 5px;
-      transition: background-color 0.3s;
-      margin-right: 10px;
-      margin-bottom: 10px;
-      width: 100%;
-      text-align: center;
-    }
-    .button:hover {
-      background-color: #0056b3;
-    }
-	  @media (max-width: 600px) {
-	    .full-container {
-	      display: flex;
-	      flex-direction: column;
-	      margin: 20px;
-	    }
-      .container {
-        flex-direction: column;
-      }
-      .book-cover {
-	      flex: none;
-		    background-image: url('images/bookcover_with_award_square.jpeg');
-		    height: 400px;
-		    background-position-y: 100%;
-	    }
-      .content {
-        flex: none;
-        width: 90%;
-        padding: 15px;
-      }
-      .author-photo {
-        flex: none;
-        background-image: url('images/louise.jpg');
-        height: 400px;
-		    background-position-y: 100%;
-      }
-    }
-
-    @keyframes tonext {
-      75% {
-        left: 0;
-      }
-      95% {
-        left: 100%;
-      }
-      98% {
-        left: 100%;
-      }
-      99% {
-        left: 0;
-      }
-    }
-
-    @keyframes tostart {
-      75% {
-        left: 0;
-      }
-      95% {
-        left: -300%;
-      }
-      98% {
-        left: -300%;
-      }
-      99% {
-        left: 0;
-      }
-    }
-
-    @keyframes snap {
-      96% {
-        scroll-snap-align: center;
-      }
-      97% {
-        scroll-snap-align: none;
-      }
-      99% {
-        scroll-snap-align: none;
-      }
-      100% {
-        scroll-snap-align: center;
-      }
-    }
-
-    
-    * {
-      box-sizing: border-box;
-      scrollbar-color: transparent transparent; /* thumb and track color */
-      scrollbar-width: 0px;
-    }
-
-    *::-webkit-scrollbar {
-      width: 0;
-    }
-
-    *::-webkit-scrollbar-track {
-      background: transparent;
-    }
-
-    *::-webkit-scrollbar-thumb {
-      background: transparent;
-      border: none;
-    }
-
-    * {
-      -ms-overflow-style: none;
-    }
-
-    ol, li {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    .carousel {
-      position: relative;
-      padding-top: 75%;
-      filter: drop-shadow(0 0 10px #0003);
-      perspective: 100px;
-    }
-
-    .carousel__viewport {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      display: flex;
-      overflow-x: scroll;
-      counter-reset: item;
-      scroll-behavior: smooth;
-      scroll-snap-type: x mandatory;
-    }
-
-    .carousel__slide {
-      position: relative;
-      flex: 0 0 100%;
-      width: 100%;
-      /*background-color: #f99;*/
-      counter-increment: item;
-    }
-
-    /*
-    .carousel__slide:nth-child(even) {
-      background-color: #99f;
-    }
-    */
-    .carousel__slide:before {
-      /*content: counter(item);*/
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate3d(-50%,-40%,70px);
-      color: #920b0b;
-      font-size: 2em;
-    }
-
-    .carousel__snapper {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      scroll-snap-align: center;
-    }
-
-    @media (hover: hover) {
-      .carousel__snapper {
-        animation-name: tonext, snap;
-        animation-timing-function: ease;
-        animation-duration: 4s;
-        animation-iteration-count: infinite;
-      }
-
-      .carousel__slide:last-child .carousel__snapper {
-        animation-name: tostart, snap;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .carousel__snapper {
-        animation-name: none;
-      }
-    }
-
-    .carousel:hover .carousel__snapper,
-    .carousel:focus-within .carousel__snapper {
-      animation-name: none;
-    }
-
-    .carousel__navigation {
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      text-align: center;
-    }
-
-    .carousel__navigation-list,
-    .carousel__navigation-item {
-      display: inline-block;
-    }
-
-    .carousel__navigation-button {
-      display: inline-block;
-      width: 1.5rem;
-      height: 1.5rem;
-      background-color: #333;
-      background-clip: content-box;
-      border: 0.25rem solid transparent;
-      border-radius: 50%;
-      font-size: 0;
-      transition: transform 0.1s;
-    }
-
-    .carousel::before,
-    .carousel::after,
-    .carousel__prev,
-    .carousel__next {
-      position: absolute;
-      top: 0;
-      margin-top: 37.5%;
-      width: 4rem;
-      height: 4rem;
-      transform: translateY(-50%);
-      border-radius: 50%;
-      font-size: 0;
-      outline: 0;
-    }
-
-    .carousel::before,
-    .carousel__prev {
-      left: -1rem;
-    }
-
-    .carousel::after,
-    .carousel__next {
-      right: -1rem;
-    }
-
-    .carousel::before,
-    .carousel::after {
-      content: '';
-      z-index: 1;
-      background-color: #333;
-      background-size: 1.5rem 1.5rem;
-      background-repeat: no-repeat;
-      background-position: center center;
-      color: #fff;
-      font-size: 2.5rem;
-      line-height: 4rem;
-      text-align: center;
-      pointer-events: none;
-    }
-
-    .carousel::before {
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,50 80,100 80,0' fill='%23fff'/%3E%3C/svg%3E");
-    }
-
-    .carousel::after {
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='100,50 20,100 20,0' fill='%23fff'/%3E%3C/svg%3E");
-    }
-    img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-    }
-  </style>
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://seapoet.art/">
+  <meta name="twitter:title" content="Disintegrating Into Adulthood | Louise Hayes">
+  <meta name="twitter:description" content="Award-winning memoir about overcoming anorexia and alcoholism">
+  <meta name="twitter:image" content="https://seapoet.art/images/bookcover_with_award2.jpg">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="./images/favicon.png">
+  <link rel="apple-touch-icon" href="./images/favicon.png">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://seapoet.art/">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/styles.css">
+  
+  <!-- Preconnect to external domains for performance -->
+  <link rel="preconnect" href="https://www.amazon.com">
+  <link rel="preconnect" href="https://www.instagram.com">
+  <link rel="preconnect" href="https://seapoet.square.site">
+  
+  <title>Disintegrating Into Adulthood | Louise Hayes - Award-Winning Memoir</title>
+  
+  <!-- Structured Data / Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Book",
+    "name": "Disintegrating Into Adulthood",
+    "author": {
+      "@type": "Person",
+      "name": "Louise Wilhelmiene Hayes",
+      "description": "Writer, poet, and peer support volunteer for women in addiction recovery",
+      "url": "https://seapoet.art"
+    },
+    "description": "Unfiltered personal account of one woman's battle with anorexia and alcoholism, told with insightful detail, captivating prose, and passionately raw poetry.",
+    "image": "https://seapoet.art/images/bookcover_with_award2.jpg",
+    "url": "https://seapoet.art",
+    "genre": ["Memoir", "Self-Help", "Mental Health", "Poetry"],
+    "inLanguage": "en-US",
+    "award": "Next Generation Indie Book Awards Finalist 2025 - Memoir (Personal Struggle/Health Issues)",
+    "offers": {
+      "@type": "Offer",
+      "url": "https://www.amazon.com/dp/B0CRP38R2D",
+      "availability": "https://schema.org/InStock",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Independent"
+    },
+    "datePublished": "2024"
+  }
+  </script>
 </head>
 <body>
-  <div class="full-container">
-    <div class="container">
-      <div class="book-cover"></div>
-      <div class="content">
-        <h1>DISINTEGRATING INTO ADULTHOOD</h1>
-	      <h2>My journey through the abyss of anorexia and alcoholism, and how I walked, and wrote, myself well</h2>
-        <p>Unfiltered personal account of one woman's battle with anorexia and alcoholism, told with insightful detail, captivating prose, and passionately raw poetry. Spread over the course of four decades, the book digs into the ravages of mental illness: from the tumultuous teenage years burdened by an unattainable quest for perfection, to the turbulent journey towards love and marriage and motherhood, and the subsequent unraveling into full-blown alcoholism that almost claimed her life. A tale of personal self-discovery and growth, along a teetering and unpredictable road to recovery, and eventual sustained sobriety, it thoroughly encapsulates the intense struggles so many women face to find meaningful purpose in this chaotic and confusing world.</p>
-        <div class="button-container">
-          <a href="https://www.amazon.com/dp/B0CRP38R2D?ref_=pe_93986420_774957520" class="button" target="_blank">Buy on Amazon</a>
-          <a href="https://www.instagram.com/seapoet.art/" class="button" target="_blank">Follow on Instagram</a>
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="content">
-        <a href="./content/book_preview.pdf" target="_blank"><h2>Free sneakpeek of the first few chapters...</h2></a>
-      </div>
-    </div>
-    <div class="container">
-	    <div class="content">
-		    <h2>About the Author</h2>
-		    <p>Louise Wilhelmiene Hayes is a writer and poet who was recently recognized as a finalist of the Memoir (Personal Struggle/Health Issues) category in the <a href="https://indiebookawards.com/winners.php?year=2025" target="_blank">Next Generation Indie Book Awards</a>, the world's largest book awards program for independent publishers and self-published authors, often cited as the "Sundance" of the book publishing world. Ms. Hayes is also a peer support volunteer for women in addiction recovery, the undisputed manager of everything in her household, an avid plant-based cook and creative baker, a lover of 90s alternative music, and a believer that long walks (preferably at the beach) make every day better. She currently resides in a small house in Boca Raton, Florida with her husband and their two older kids.</p>
-	    </div>
-	    <div class="author-photo"></div>
-    </div>
-    <div class="container">
-	    <div class="content">
-        <section class="carousel" aria-label="Gallery">
-          <ol class="carousel__viewport">
-            <li id="carousel__slide01"
-                tabindex="0"
-                class="carousel__slide">
-              <div class="carousel__snapper">
-                <a href="#carousel__slide12" class="carousel__prev">Go to last slide</a>
-                   <img src="images/thumbs/01.jpg" >
-                <a href="#carousel__slide02" class="carousel__next">Go to next slide</a>
-              </div>
-            </li>
-            <li id="carousel__slide02"
-                tabindex="0"
-                class="carousel__slide">
-              <div class="carousel__snapper"></div>
-              <a href="#carousel__slide01" class="carousel__prev">Go to previous slide</a>
-                 <img src="images/thumbs/02.jpg" >
-              <a href="#carousel__slide03" class="carousel__next">Go to next slide</a>
-            </li>
-            <li id="carousel__slide03"
-                tabindex="0"
-                class="carousel__slide">
-              <div class="carousel__snapper"></div>
-              <a href="#carousel__slide02" class="carousel__prev">Go to previous slide</a>
-                 <img src="images/thumbs/03.jpg" >
-              <a href="#carousel__slide04" class="carousel__next">Go to next slide</a>
-            </li>
-            <li id="carousel__slide04"
-                tabindex="0"
-                class="carousel__slide">
-              <div class="carousel__snapper"></div>
-              <a href="#carousel__slide03" class="carousel__prev">Go to previous slide</a>
-                 <img src="images/thumbs/04.jpg" >
-              <a href="#carousel__slide05" class="carousel__next">Go to next slide</a>
-            </li>
-            <li id="carousel__slide05"
-                tabindex="0"
-                class="carousel__slide">
-              <div class="carousel__snapper"></div>
-              <a href="#carousel__slide04" class="carousel__prev">Go to previous slide</a>
-                 <img src="images/thumbs/05.jpg">
-              <a href="#carousel__slide06" class="carousel__next">Go to next slide</a>
-            </li>
-            <li id="carousel__slide06"
-                tabindex="0"
-                class="carousel__slide">
-              <div class="carousel__snapper"></div>
-              <a href="#carousel__slide05" class="carousel__prev">Go to previous slide</a>
-                 <img src="images/thumbs/06.jpg" >
-              <a href="#carousel__slide07" class="carousel__next">Go to next slide</a>
-            </li>
-            <li id="carousel__slide07"
-                tabindex="0"
-                class="carousel__slide">
-              <div class="carousel__snapper"></div>
-              <a href="#carousel__slide06" class="carousel__prev">Go to previous slide</a>
-                 <img src="images/thumbs/07.jpg" >
-              <a href="#carousel__slide08" class="carousel__next">Go to next slide</a>
-            </li>
-            <li id="carousel__slide08"
-                tabindex="0"
-                class="carousel__slide">
-              <div class="carousel__snapper"></div>
-              <a href="#carousel__slide07" class="carousel__prev">Go to previous slide</a>
-                 <img src="images/thumbs/08.jpg" >
-              <a href="#carousel__slide09" class="carousel__next">Go to next slide</a>
-            </li>
-            <li id="carousel__slide09"
-                tabindex="0"
-                class="carousel__slide">
-              <div class="carousel__snapper"></div>
-              <a href="#carousel__slide08" class="carousel__prev">Go to previous slide</a>
-                 <img src="images/thumbs/09.jpg" >
-              <a href="#carousel__slide10" class="carousel__next">Go to next slide</a>
-            </li>
-            <li id="carousel__slide10"
-                tabindex="0"
-                class="carousel__slide">
-              <div class="carousel__snapper"></div>
-              <a href="#carousel__slide09" class="carousel__prev">Go to previous slide</a>
-                 <img src="images/thumbs/10.jpg" >
-              <a href="#carousel__slide11" class="carousel__next">Go to next slide</a>
-            </li>
-            <li id="carousel__slide11"
-                tabindex="0"
-                class="carousel__slide">
-              <div class="carousel__snapper"></div>
-              <a href="#carousel__slide10" class="carousel__prev">Go to previous slide</a>
-                 <img src="images/thumbs/11.jpg" >
-              <a href="#carousel__slide12" class="carousel__next">Go to next slide</a>
-            </li>
-            <li id="carousel__slide12"
-                tabindex="0"
-                class="carousel__slide">
-              <div class="carousel__snapper"></div>
-              <a href="#carousel__slide11" class="carousel__prev">Go to previous slide</a>
-                 <img src="images/thumbs/12.jpg" >
-              <a href="#carousel__slide01" class="carousel__next">Go to first slide</a>
-            </li>
-          </ol>
-        </section>
-        <div class="button-container">
-          <a href="poetryprints.html" class="button">View Larger</a>
-        </div>
-      </div>
-	    <div class="content">
-		    <h2>Poetry Prints</h2>
-				<p>Designed with images captured while walking and writing at my local beach.  Available for purchase in two different sizes.</p>
-        <div class="button-container">
-          <a href="https://seapoet.square.site" class="button" target="_blank">Shop on Square</a>
-        </div>
-	    </div>
-    </div>
-    <div class="container">
-      <div class="content">
-        <img src="images/awards.jpg">
-      </div>
+  <!-- Loading Overlay -->
+  <div class="loading-overlay" id="loadingOverlay">
+    <div class="spinner" role="status">
+      <span class="sr-only">Loading...</span>
     </div>
   </div>
+
+  <!-- Main Content -->
+  <main class="full-container">
+    
+    <!-- Book Section -->
+    <article class="container book-section" id="book">
+      <div class="book-cover" 
+           role="img" 
+           aria-label="Book cover of Disintegrating Into Adulthood with Next Generation Indie Book Awards finalist badge">
+      </div>
+      <div class="content">
+        <h1>DISINTEGRATING INTO ADULTHOOD</h1>
+        <h2>My journey through the abyss of anorexia and alcoholism, and how I walked, and wrote, myself well</h2>
+        <p>Unfiltered personal account of one woman's battle with anorexia and alcoholism, told with insightful detail, captivating prose, and passionately raw poetry. Spread over the course of four decades, the book digs into the ravages of mental illness: from the tumultuous teenage years burdened by an unattainable quest for perfection, to the turbulent journey towards love and marriage and motherhood, and the subsequent unraveling into full-blown alcoholism that almost claimed her life. A tale of personal self-discovery and growth, along a teetering and unpredictable road to recovery, and eventual sustained sobriety, it thoroughly encapsulates the intense struggles so many women face to find meaningful purpose in this chaotic and confusing world.</p>
+        <nav class="button-container" aria-label="Book purchase and social media links">
+          <a href="https://www.amazon.com/dp/B0CRP38R2D?ref_=pe_93986420_774957520" 
+             class="button" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             aria-label="Buy Disintegrating Into Adulthood on Amazon (opens in new window)">
+            Buy on Amazon
+          </a>
+          <a href="https://www.instagram.com/seapoet.art/" 
+             class="button" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             aria-label="Follow Louise Hayes on Instagram (opens in new window)">
+            Follow on Instagram
+          </a>
+        </nav>
+      </div>
+    </article>
+
+    <!-- Preview Section -->
+    <section class="container preview-section" id="preview">
+      <div class="content">
+        <a href="./content/book_preview.pdf" 
+           target="_blank" 
+           rel="noopener"
+           aria-label="Download free preview of the first few chapters (PDF)">
+          <h2>Free sneak peek of the first few chapters...</h2>
+        </a>
+      </div>
+    </section>
+
+    <!-- About Author Section -->
+    <section class="container author-section" id="author">
+      <div class="content">
+        <h2>About the Author</h2>
+        <p>Louise Wilhelmiene Hayes is a writer and poet who was recently recognized as a finalist of the Memoir (Personal Struggle/Health Issues) category in the <a href="https://indiebookawards.com/winners.php?year=2025" target="_blank" rel="noopener">Next Generation Indie Book Awards</a>, the world's largest book awards program for independent publishers and self-published authors, often cited as the "Sundance" of the book publishing world. Ms. Hayes is also a peer support volunteer for women in addiction recovery, the undisputed manager of everything in her household, an avid plant-based cook and creative baker, a lover of 90s alternative music, and a believer that long walks (preferably at the beach) make every day better. She currently resides in a small house in Boca Raton, Florida with her husband and their two older kids.</p>
+      </div>
+      <div class="author-photo" 
+           role="img" 
+           aria-label="Portrait photograph of author Louise Hayes">
+      </div>
+    </section>
+
+    <!-- Poetry Prints Section -->
+    <section class="container poetry-section" id="poetry">
+      <div class="content">
+        <div class="carousel" role="region" aria-label="Poetry prints gallery" aria-roledescription="carousel">
+          <div class="carousel__viewport">
+            <div id="carousel__slide01" class="carousel__slide" role="group" aria-roledescription="slide" aria-label="1 of 12">
+              <img src="images/thumbs/01.jpg" alt="Poetry print featuring beach scene with text overlay" loading="lazy">
+            </div>
+            <div id="carousel__slide02" class="carousel__slide" role="group" aria-roledescription="slide" aria-label="2 of 12">
+              <img src="images/thumbs/02.jpg" alt="Poetry print featuring ocean waves with text overlay" loading="lazy">
+            </div>
+            <div id="carousel__slide03" class="carousel__slide" role="group" aria-roledescription="slide" aria-label="3 of 12">
+              <img src="images/thumbs/03.jpg" alt="Poetry print featuring sunset over water with text overlay" loading="lazy">
+            </div>
+            <div id="carousel__slide04" class="carousel__slide" role="group" aria-roledescription="slide" aria-label="4 of 12">
+              <img src="images/thumbs/04.jpg" alt="Poetry print featuring sandy beach with text overlay" loading="lazy">
+            </div>
+            <div id="carousel__slide05" class="carousel__slide" role="group" aria-roledescription="slide" aria-label="5 of 12">
+              <img src="images/thumbs/05.jpg" alt="Poetry print featuring beach path with text overlay" loading="lazy">
+            </div>
+            <div id="carousel__slide06" class="carousel__slide" role="group" aria-roledescription="slide" aria-label="6 of 12">
+              <img src="images/thumbs/06.jpg" alt="Poetry print featuring coastal scene with text overlay" loading="lazy">
+            </div>
+            <div id="carousel__slide07" class="carousel__slide" role="group" aria-roledescription="slide" aria-label="7 of 12">
+              <img src="images/thumbs/07.jpg" alt="Poetry print featuring beach landscape with text overlay" loading="lazy">
+            </div>
+            <div id="carousel__slide08" class="carousel__slide" role="group" aria-roledescription="slide" aria-label="8 of 12">
+              <img src="images/thumbs/08.jpg" alt="Poetry print featuring ocean view with text overlay" loading="lazy">
+            </div>
+            <div id="carousel__slide09" class="carousel__slide" role="group" aria-roledescription="slide" aria-label="9 of 12">
+              <img src="images/thumbs/09.jpg" alt="Poetry print featuring beach morning with text overlay" loading="lazy">
+            </div>
+            <div id="carousel__slide10" class="carousel__slide" role="group" aria-roledescription="slide" aria-label="10 of 12">
+              <img src="images/thumbs/10.jpg" alt="Poetry print featuring shoreline with text overlay" loading="lazy">
+            </div>
+            <div id="carousel__slide11" class="carousel__slide" role="group" aria-roledescription="slide" aria-label="11 of 12">
+              <img src="images/thumbs/11.jpg" alt="Poetry print featuring beach evening with text overlay" loading="lazy">
+            </div>
+            <div id="carousel__slide12" class="carousel__slide" role="group" aria-roledescription="slide" aria-label="12 of 12">
+              <img src="images/thumbs/12.jpg" alt="Poetry print featuring peaceful beach with text overlay" loading="lazy">
+            </div>
+          </div>
+        </div>
+        <nav class="button-container" style="margin-top: 20px;">
+          <a href="poetryprints.html" 
+             class="button"
+             aria-label="View poetry prints in larger size">
+            View Larger
+          </a>
+        </nav>
+      </div>
+      <div class="content">
+        <h2>Poetry Prints</h2>
+        <p>Designed with images captured while walking and writing at my local beach. Available for purchase in two different sizes.</p>
+        <nav class="button-container">
+          <a href="https://seapoet.square.site" 
+             class="button" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             aria-label="Shop for poetry prints on Square (opens in new window)">
+            Shop on Square
+          </a>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Awards Section -->
+    <footer class="container awards-section" id="awards">
+      <div class="content">
+        <img src="images/awards.jpg" 
+             alt="Next Generation Indie Book Awards Finalist 2025 badge" 
+             loading="lazy">
+      </div>
+    </footer>
+    
+  </main>
+
+  <!-- Scripts -->
+  <script src="js/slideshow.js"></script>
+  <script src="js/main.js"></script>
+  
+  <!-- Optional: Add Google Analytics or other tracking here -->
+  <!-- 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR-GA-ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'YOUR-GA-ID');
+  </script>
+  -->
 </body>
 </html>
-
-<!--
-This code will display the book cover on the left side of the page and the blurb with buttons on the right side. Adjustments have been made to the layout using flexbox for responsiveness and aesthetics.
--->
