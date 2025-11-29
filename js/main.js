@@ -47,12 +47,10 @@
       anchor.addEventListener('click', function(e) {
         const href = this.getAttribute('href');
         
-        // Don't prevent default for carousel navigation
-        if (href.startsWith('#carousel__slide')) {
+        // Don't prevent default for carousel navigation or empty hashes
+        if (href.startsWith('#carousel__slide') || href === '#' || href === '') {
           return;
         }
-        
-        if (href === '#' || href === '') return;
         
         const target = document.querySelector(href);
         if (target) {

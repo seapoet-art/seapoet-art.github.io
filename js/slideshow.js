@@ -212,8 +212,24 @@
     }, CONFIG.pauseOnInteraction);
   }
 
+  // Handle URL hash changes for deep linking
+  function handleHashChange() {
+    const hash = window.location.hash.substring(1);
+    if (hash && hash.startsWith('carousel__slide')) {
+      const slideIndex = Array.from(slides).findIndex(slide => slide.id === hash);
+      if (slideIndex !== -1) {
+        showSlide(slideIndex);
+      }
+    }
+  }
+  
   // Set up event listeners
   function setupEventListeners() {
+    // Navigation controls already set up in createNavigationControls()
+    // Indicators already set up in createIndicators()
+    
+    // Handle hash changes for navigation
+    window.addEventListener('hashchange', handleHashChange);
     // Pause on hover
     if (CONFIG.pauseOnHover) {
       carousel.addEventListener('mouseenter', stopAutoplay);
@@ -267,11 +283,8 @@
     // Swipe support for touch devices
     setupTouchEvents();
     
-    // Handle hash changes for deep linking
+    // Handle hash changes for deep linking (but don't trigger on initial load)
     window.addEventListener('hashchange', handleHashChange);
-    
-    // Check for initial hash
-    handleHashChange();
   }
 
   // Touch/swipe support

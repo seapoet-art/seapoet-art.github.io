@@ -190,21 +190,21 @@ p {
 }
 
 .book-cover {
-  background-image: url('../images/bookcover_with_award2.jpg');
+  background-image: url('/images/bookcover_with_award2.jpg');
 }
 
 .author-photo {
-  background-image: url('../images/louise.jpg');
+  background-image: url('/images/louise.jpg');
 }
 
 /* For browsers that support WebP */
 @supports (background-image: url('test.webp')) {
   .book-cover {
-    background-image: url('../images/bookcover_with_award2.webp');
+    background-image: url('/images/bookcover_with_award2.webp');
   }
   
   .author-photo {
-    background-image: url('../images/louise.webp');
+    background-image: url('/images/louise.webp');
   }
 }
 
@@ -509,7 +509,7 @@ img {
   }
   
   .book-cover {
-    background-image: url('../images/bookcover_with_award_square.jpeg');
+    background-image: url('/images/bookcover_with_award_square.jpeg');
     background-position: center top;
     min-height: 250px;
   }
