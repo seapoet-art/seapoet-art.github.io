@@ -50,6 +50,15 @@ body {
   color: var(--primary-text);
   line-height: 1.6;
   min-height: 100%;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Long-word / long-URL safety on narrow screens */
+p, h1, h2, h3, h4, h5, h6, a, li {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 /* Links */
@@ -149,27 +158,30 @@ p {
 .full-container {
   display: flex;
   flex-direction: column;
-  margin: 50px;
+  margin: 50px auto;
   max-width: 1400px;
-  margin-left: auto;
-  margin-right: auto;
+  padding: 0 10px;
 }
 
 .container {
   display: flex;
   flex-direction: row;
+  width: 100%;
   max-width: 1000px;
   margin: 0 auto var(--spacing-md) auto;
   border-radius: 10px;
   box-shadow: 0 0 10px var(--shadow-color);
   overflow: hidden;
   background-color: rgba(255, 255, 255, 0.02);
-  transition: transform var(--transition-normal);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
 }
 
-.container:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 20px rgba(71, 190, 199, 0.1);
+/* Only apply hover transforms on true hover-capable (non-touch) devices */
+@media (hover: hover) and (pointer: fine) {
+  .container:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(71, 190, 199, 0.1);
+  }
 }
 
 .content {
@@ -247,16 +259,18 @@ p {
   transition: width 0.6s, height 0.6s;
 }
 
-.button:hover {
-  background-color: var(--accent-hover);
-  border-color: var(--accent-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(71, 190, 199, 0.4);
-}
+@media (hover: hover) and (pointer: fine) {
+  .button:hover {
+    background-color: var(--accent-hover);
+    border-color: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(71, 190, 199, 0.4);
+  }
 
-.button:hover::before {
-  width: 300px;
-  height: 300px;
+  .button:hover::before {
+    width: 300px;
+    height: 300px;
+  }
 }
 
 .button:focus {
@@ -345,10 +359,12 @@ p {
   right: 10px;
 }
 
-.carousel__prev:hover,
-.carousel__next:hover {
-  background-color: var(--accent-color);
-  transform: translateY(-50%) scale(1.1);
+@media (hover: hover) and (pointer: fine) {
+  .carousel__prev:hover,
+  .carousel__next:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-50%) scale(1.1);
+  }
 }
 
 .carousel__prev:focus,
@@ -408,9 +424,11 @@ p {
   font-size: 18px;
 }
 
-.carousel__control:hover {
-  background-color: var(--accent-color);
-  transform: scale(1.1);
+@media (hover: hover) and (pointer: fine) {
+  .carousel__control:hover {
+    background-color: var(--accent-color);
+    transform: scale(1.1);
+  }
 }
 
 /* Images */
@@ -426,7 +444,8 @@ img {
 /* Tablet Landscape - Medium Screens */
 @media (max-width: 991px) {
   .full-container {
-    margin: 30px;
+    margin: 30px auto;
+    padding: 0 10px;
   }
   
   .container {
@@ -441,14 +460,24 @@ img {
   .author-photo {
     min-height: 350px;
   }
+
+  /* On stacked layouts put the author photo above the bio for visual rhythm */
+  .author-section {
+    flex-direction: column-reverse;
+  }
 }
 
 /* Tablet Portrait - Small Screens */
 @media (max-width: 767px) {
   .full-container {
-    margin: 20px;
+    margin: 20px auto;
+    padding: 0 8px;
   }
   
+  .container {
+    margin-bottom: var(--spacing-sm);
+  }
+
   .content {
     padding: 30px;
   }
@@ -478,6 +507,11 @@ img {
     width: 100%;
   }
   
+  /* Slightly less tall carousel on tablet-portrait */
+  .carousel {
+    padding-top: 70%;
+  }
+
   .carousel__prev,
   .carousel__next {
     width: 40px;
@@ -489,7 +523,8 @@ img {
 /* Mobile - Extra Small Screens */
 @media (max-width: 600px) {
   .full-container {
-    margin: 10px;
+    margin: 10px auto;
+    padding: 0 6px;
   }
   
   .content {
@@ -497,11 +532,11 @@ img {
   }
   
   h1 {
-    font-size: 24px;
+    font-size: clamp(20px, 6vw, 24px);
   }
   
   h2 {
-    font-size: 20px;
+    font-size: clamp(18px, 5vw, 20px);
   }
   
   p {
@@ -511,24 +546,38 @@ img {
   .book-cover {
     background-image: url('/images/bookcover_with_award_square.jpeg');
     background-position: center top;
-    min-height: 250px;
+    min-height: 260px;
+  }
+
+  /* Use the square WebP if supported */
+  @supports (background-image: url('test.webp')) {
+    .book-cover {
+      background-image: url('/images/bookcover_with_award_square.webp');
+    }
   }
   
   .author-photo {
     background-position: center top;
-    min-height: 250px;
+    min-height: 260px;
   }
   
   .button {
-    padding: 10px 18px;
-    font-size: 14px;
+    padding: 12px 18px;
+    font-size: 15px;
     min-width: auto;
+    /* iOS-friendly tap target */
+    min-height: 44px;
+  }
+  
+  /* Square-ish carousel on phones so vertical scroll is less aggressive */
+  .carousel {
+    padding-top: 100%;
   }
   
   .carousel__prev,
   .carousel__next {
-    width: 35px;
-    height: 35px;
+    width: 38px;
+    height: 38px;
     font-size: 18px;
   }
   
@@ -554,11 +603,12 @@ img {
 /* Mobile - Very Small Screens */
 @media (max-width: 400px) {
   .full-container {
-    margin: 5px;
+    margin: 5px auto;
+    padding: 0 4px;
   }
   
   .content {
-    padding: 15px;
+    padding: 18px 14px;
   }
   
   h1 {
@@ -571,7 +621,15 @@ img {
   
   .book-cover,
   .author-photo {
-    min-height: 200px;
+    min-height: 220px;
+  }
+}
+
+/* Landscape phones (short viewports) - keep loading spinner visible */
+@media (max-height: 450px) and (orientation: landscape) {
+  .book-cover,
+  .author-photo {
+    min-height: 240px;
   }
 }
 
