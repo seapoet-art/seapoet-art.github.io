@@ -282,154 +282,6 @@ p {
   transform: translateY(0);
 }
 
-/* Carousel / Slideshow
-   ========================================================================== */
-.carousel {
-  position: relative;
-  width: 100%;
-  padding-top: 75%; /* 4:3 Aspect Ratio */
-  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
-  background-color: rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.carousel__viewport {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  overflow: hidden;
-}
-
-.carousel__slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.carousel__slide.active {
-  opacity: 1;
-  z-index: 2;
-}
-
-.carousel__slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-}
-
-/* Carousel Navigation */
-.carousel__prev,
-.carousel__next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 50px;
-  height: 50px;
-  background-color: rgba(71, 190, 199, 0.8);
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all var(--transition-normal);
-  color: white;
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.carousel__prev {
-  left: 10px;
-}
-
-.carousel__next {
-  right: 10px;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .carousel__prev:hover,
-  .carousel__next:hover {
-    background-color: var(--accent-color);
-    transform: translateY(-50%) scale(1.1);
-  }
-}
-
-.carousel__prev:focus,
-.carousel__next:focus {
-  outline: 3px solid white;
-  outline-offset: 3px;
-}
-
-/* Carousel Indicators */
-.carousel__indicators {
-  position: absolute;
-  bottom: 15px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 10px;
-  z-index: 10;
-}
-
-.carousel__indicator {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.5);
-  border: 2px solid transparent;
-  cursor: pointer;
-  transition: all var(--transition-fast);
-}
-
-.carousel__indicator.active {
-  background-color: var(--accent-color);
-  border-color: white;
-  transform: scale(1.2);
-}
-
-.carousel__indicator:hover {
-  background-color: rgba(255, 255, 255, 0.8);
-}
-
-/* Carousel Pause/Play Button */
-.carousel__control {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 40px;
-  height: 40px;
-  background-color: rgba(71, 190, 199, 0.8);
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all var(--transition-normal);
-  color: white;
-  font-size: 18px;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .carousel__control:hover {
-    background-color: var(--accent-color);
-    transform: scale(1.1);
-  }
-}
 
 /* Images */
 img {
@@ -507,17 +359,6 @@ img {
     width: 100%;
   }
   
-  /* Slightly less tall carousel on tablet-portrait */
-  .carousel {
-    padding-top: 70%;
-  }
-
-  .carousel__prev,
-  .carousel__next {
-    width: 40px;
-    height: 40px;
-    font-size: 20px;
-  }
 }
 
 /* Mobile - Extra Small Screens */
@@ -569,35 +410,6 @@ img {
     min-height: 44px;
   }
   
-  /* Square-ish carousel on phones so vertical scroll is less aggressive */
-  .carousel {
-    padding-top: 100%;
-  }
-  
-  .carousel__prev,
-  .carousel__next {
-    width: 38px;
-    height: 38px;
-    font-size: 18px;
-  }
-  
-  .carousel__prev {
-    left: 5px;
-  }
-  
-  .carousel__next {
-    right: 5px;
-  }
-  
-  .carousel__indicators {
-    bottom: 10px;
-    gap: 8px;
-  }
-  
-  .carousel__indicator {
-    width: 10px;
-    height: 10px;
-  }
 }
 
 /* Mobile - Very Small Screens */
@@ -637,10 +449,6 @@ img {
    ========================================================================== */
 @media print {
   .button,
-  .carousel__prev,
-  .carousel__next,
-  .carousel__indicators,
-  .carousel__control,
   .loading-overlay {
     display: none !important;
   }
