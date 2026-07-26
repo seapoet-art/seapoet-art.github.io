@@ -186,8 +186,8 @@ th {
   --primary-bg: #0b1c2f;
   --primary-text: #848d96;
   --heading-text: #ddd;
-  --accent-color: #47bec7;
-  --accent-hover: #0056b3;
+  --accent-color: #8b6fce;
+  --accent-hover: #6b4fb0;
   --link-color: #848d96;
   --shadow-color: rgba(0, 0, 0, 0.1);
   
@@ -357,7 +357,7 @@ p {
 @media (hover: hover) and (pointer: fine) {
   .container:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 20px rgba(71, 190, 199, 0.1);
+    box-shadow: 0 5px 20px rgba(139, 111, 206, 0.1);
   }
 }
 
@@ -403,7 +403,7 @@ p {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 10px;
+  gap: var(--spacing-sm);
   flex-wrap: wrap;
 }
 
@@ -413,7 +413,7 @@ p {
   background-color: var(--accent-color);
   color: white;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 999px;
   border: 2px solid var(--accent-color);
   transition: all var(--transition-normal);
   text-align: center;
@@ -441,7 +441,7 @@ p {
     background-color: var(--accent-hover);
     border-color: var(--accent-hover);
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(71, 190, 199, 0.4);
+    box-shadow: 0 5px 15px rgba(139, 111, 206, 0.4);
   }
 
   .button:hover::before {
@@ -696,6 +696,10 @@ img {
   font-size: 18px;
   margin: 0 auto var(--spacing-md) auto;
   max-width: 600px;
+}
+
+.gallery-page .button-container:not(:last-child) {
+  margin-bottom: var(--spacing-md);
 }
 
 .gallery {

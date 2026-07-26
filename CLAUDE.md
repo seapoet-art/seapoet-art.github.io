@@ -12,9 +12,9 @@ There are no build/lint/test commands. To preview changes, open the HTML files d
 
 ## Live pages
 
-- `index.html` — the homepage (book info, author bio, preview PDF link, poetry prints teaser, awards)
-- `poetryprints.html` — a hub page linking to the 4 poetry print category pages below (linked from `index.html`'s "View Prints" button)
-- `political-poetry.html`, `sobriety-mental-health-poetry.html`, `ocean-poetry.html`, `miscellaneous-poetry.html` — one page per poetry theme, each a simple image gallery. `political-poetry.html` currently has no prints yet (placeholder "coming soon" message) — check `images/poetry/political/` before assuming it's still empty.
+- `index.html` — the homepage (book info, author bio, preview PDF link, poetry prints teaser, awards). Must stay at the repo root — GitHub Pages serves this file directly for `https://seapoet.art/`; only `index.html` and `CNAME` live at the root, every other HTML page lives under `content/`.
+- `content/poetryprints.html` — a hub page linking to the 4 poetry print category pages below (linked from `index.html`'s "View Prints" button via `content/poetryprints.html`)
+- `content/political-poetry.html`, `content/sobriety-mental-health-poetry.html`, `content/ocean-poetry.html`, `content/miscellaneous-poetry.html` — one page per poetry theme, each a simple image gallery. `political-poetry.html` currently has no prints yet (placeholder "coming soon" message) — check `images/poetry/political/` before assuming it's still empty. Since these pages live one level down from the root, their `css`/`images` references use `../` (e.g. `../css/styles.css`), while links between the pages themselves (and back to `poetryprints.html`) stay bare filenames since they're siblings in the same folder.
 
 All poetry-print gallery pages share the `.gallery-page`/`.gallery`/`.empty-note` CSS classes (see below) — follow that pattern rather than inventing new markup if another category page is added later.
 
