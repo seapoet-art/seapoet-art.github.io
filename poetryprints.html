@@ -3,119 +3,26 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Poetry prints by Louise Hayes - designed with images captured while walking and writing at the beach.">
+    <meta name="description" content="Poetry prints by Louise Hayes, organized by theme - political, sobriety and mental health, ocean-themed, and miscellaneous.">
     <link rel="icon" type="image/png" href="./images/favicon.png">
+    <link rel="stylesheet" href="css/styles.css">
     <title>Louise Hayes - Poetry Prints</title>
-    <style>
-      * {
-        box-sizing: border-box;
-      }
-
-      html {
-        -webkit-text-size-adjust: 100%;
-        text-size-adjust: 100%;
-      }
-
-      body {
-        margin: 0;
-        padding: 20px 12px;
-        font-family: Arial, sans-serif;
-        background-color: #0b1c2f;
-        color: #ddd;
-        overflow-x: hidden;
-      }
-
-      .container {
-        max-width: 720px;
-        margin: 0 auto;
-        text-align: center;
-      }
-
-      h1 {
-        font-size: clamp(24px, 6vw, 36px);
-        margin: 10px 0 24px 0;
-        color: #ddd;
-      }
-
-      .gallery {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        align-items: center;
-      }
-
-      .gallery img {
-        width: 100%;
-        max-width: 600px;
-        height: auto;
-        display: block;
-        border-radius: 6px;
-        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
-        opacity: 0.92;
-        transition: opacity 0.25s ease, transform 0.25s ease;
-      }
-
-      @media (hover: hover) and (pointer: fine) {
-        .gallery img:hover {
-          opacity: 1;
-          transform: translateY(-2px);
-        }
-      }
-
-      .home-link {
-        display: inline-block;
-        margin: 30px auto 10px auto;
-        padding: 12px 28px;
-        background-color: #47bec7;
-        color: white;
-        text-decoration: none;
-        border-radius: 5px;
-        font-weight: 600;
-        min-height: 44px;
-        line-height: 1.6;
-      }
-
-      @media (hover: hover) and (pointer: fine) {
-        .home-link:hover {
-          background-color: #0056b3;
-        }
-      }
-
-      .home-link:focus {
-        outline: 3px solid white;
-        outline-offset: 3px;
-      }
-
-      @media (max-width: 480px) {
-        body {
-          padding: 12px 8px;
-        }
-        .gallery {
-          gap: 14px;
-        }
-      }
-    </style>
   </head>
   <body>
-    <div class="container">
+    <main class="gallery-page">
       <h1>POETRY PRINTS</h1>
+      <p class="intro">Designed with images captured while walking and writing at my local beach. Browse by theme below.</p>
 
-      <div class="gallery">
-        <img src="images/art_is_not_for_keeping.jpg" alt="Art Is Not For Keeping" loading="lazy">
-        <img src="images/bigger_than_me.jpg" alt="Bigger Than Me" loading="lazy">
-        <img src="images/bleary_eyed_to_the_sun.jpg" alt="Bleary Eyed To The Sun" loading="lazy">
-        <img src="images/dancing_with_angels.jpg" alt="Dancing With Angels" loading="lazy">
-        <img src="images/legacy.jpg" alt="Legacy" loading="lazy">
-        <img src="images/newfound_happy_hour.jpg" alt="Newfound Happy Hour" loading="lazy">
-        <img src="images/one_step_at_a_time.jpg" alt="One Step At A Time" loading="lazy">
-        <img src="images/sun_kissed.jpg" alt="Sun Kissed" loading="lazy">
-        <img src="images/the_artists_curse.jpg" alt="The Artists Curse" loading="lazy">
-        <img src="images/the_moments_in_between.jpg" alt="The Moments In Between" loading="lazy">
-        <img src="images/to_dream.jpg" alt="To Dream" loading="lazy">
-        <img src="images/with_kindness.jpg" alt="With Kindness" loading="lazy">
-      </div>
+      <nav class="button-container" aria-label="Poetry print categories">
+        <a href="political-poetry.html" class="button">Political Poetry</a>
+        <a href="sobriety-mental-health-poetry.html" class="button">Sobriety &amp; Mental Health Poetry</a>
+        <a href="ocean-poetry.html" class="button">Ocean-Themed Poetry</a>
+        <a href="miscellaneous-poetry.html" class="button">Miscellaneous Poetry</a>
+      </nav>
 
-      <a href="index.html" class="home-link" aria-label="Return to home page">Back to Home</a>
-    </div>
+      <nav class="button-container" aria-label="Site navigation">
+        <a href="index.html" class="button" aria-label="Return to home page">Back to Home</a>
+      </nav>
+    </main>
   </body>
 </html>
