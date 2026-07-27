@@ -459,6 +459,11 @@ p {
   transform: translateY(0);
 }
 
+.filter-btn.active {
+  background-color: var(--accent-hover);
+  border-color: white;
+}
+
 
 /* Images */
 img {
@@ -724,6 +729,19 @@ img {
     opacity: 1;
     transform: translateY(-2px);
   }
+}
+
+.gallery .poem {
+  margin: 0;
+  width: 100%;
+  max-width: 600px;
+}
+
+.gallery .poem figcaption {
+  margin-top: var(--spacing-xs);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--heading-text);
 }
 
 .empty-note {

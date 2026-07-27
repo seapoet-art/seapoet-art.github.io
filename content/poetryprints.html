@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Poetry prints by Louise Hayes, organized by theme - political, sobriety and mental health, ocean-themed, and miscellaneous.">
+    <meta name="description" content="Poetry prints by Louise Hayes, filterable by theme - political, sobriety and mental health, ocean-themed, and miscellaneous.">
     <link rel="icon" type="image/png" href="../images/favicon.png">
     <link rel="stylesheet" href="../css/styles.css">
     <title>Louise Hayes - Poetry Prints</title>
@@ -11,18 +11,82 @@
   <body>
     <main class="gallery-page">
       <h1>POETRY PRINTS</h1>
-      <p class="intro">Designed with images captured while walking and writing at my local beach. Browse by theme below.</p>
+      <p class="intro">Designed with images captured while walking and writing at my local beach. Filter by theme below.</p>
 
-      <nav class="button-container" aria-label="Poetry print categories">
-        <a href="political-poetry.html" class="button">Political Poetry</a>
-        <a href="sobriety-mental-health-poetry.html" class="button">Sobriety &amp; Mental Health Poetry</a>
-        <a href="ocean-poetry.html" class="button">Ocean-Themed Poetry</a>
-        <a href="miscellaneous-poetry.html" class="button">Miscellaneous Poetry</a>
-      </nav>
+      <div class="button-container filter-bar" role="group" aria-label="Filter poems by category">
+        <button type="button" class="button filter-btn active" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" class="button filter-btn" data-filter="political" aria-pressed="false">Political</button>
+        <button type="button" class="button filter-btn" data-filter="sobriety-mental-health" aria-pressed="false">Sobriety &amp; Mental Health</button>
+        <button type="button" class="button filter-btn" data-filter="ocean" aria-pressed="false">Ocean</button>
+        <button type="button" class="button filter-btn" data-filter="miscellaneous" aria-pressed="false">Miscellaneous</button>
+      </div>
+      <p id="filter-status" class="sr-only" aria-live="polite"></p>
+
+      <div class="gallery">
+        <figure class="poem" data-tags="political">
+          <img src="../images/poetry/political/more-than-thoughts-and-prayers.jpg" alt="More Than Thoughts and Prayers" loading="lazy">
+          <figcaption>More Than Thoughts and Prayers</figcaption>
+        </figure>
+        <figure class="poem" data-tags="sobriety-mental-health">
+          <img src="../images/poetry/sobriety-mental-health/bigger-than-me.jpg" alt="Bigger Than Me" loading="lazy">
+          <figcaption>Bigger Than Me</figcaption>
+        </figure>
+        <figure class="poem" data-tags="sobriety-mental-health">
+          <img src="../images/poetry/sobriety-mental-health/dancing-with-angels.jpg" alt="Dancing With Angels" loading="lazy">
+          <figcaption>Dancing With Angels</figcaption>
+        </figure>
+        <figure class="poem" data-tags="sobriety-mental-health">
+          <img src="../images/poetry/sobriety-mental-health/bleary-eyed-to-the-sun.jpg" alt="Bleary Eyed To The Sun" loading="lazy">
+          <figcaption>Bleary Eyed To The Sun</figcaption>
+        </figure>
+        <figure class="poem" data-tags="sobriety-mental-health">
+          <img src="../images/poetry/sobriety-mental-health/newfound-happy-hour.jpg" alt="Newfound Happy Hour" loading="lazy">
+          <figcaption>Newfound Happy Hour</figcaption>
+        </figure>
+        <figure class="poem" data-tags="sobriety-mental-health">
+          <img src="../images/poetry/sobriety-mental-health/the-moments-in-between.jpg" alt="The Moments In Between" loading="lazy">
+          <figcaption>The Moments In Between</figcaption>
+        </figure>
+        <figure class="poem" data-tags="ocean">
+          <img src="../images/poetry/ocean/sun-kissed.jpg" alt="Sun Kissed" loading="lazy">
+          <figcaption>Sun-Kissed</figcaption>
+        </figure>
+        <figure class="poem" data-tags="ocean">
+          <img src="../images/poetry/ocean/one-step-at-a-time.jpg" alt="One Step At A Time" loading="lazy">
+          <figcaption>One Step At A Time</figcaption>
+        </figure>
+        <figure class="poem" data-tags="ocean">
+          <img src="../images/poetry/ocean/to-dream.jpg" alt="To Dream" loading="lazy">
+          <figcaption>To Dream</figcaption>
+        </figure>
+        <figure class="poem" data-tags="ocean">
+          <img src="../images/poetry/ocean/legacy.jpg" alt="Legacy" loading="lazy">
+          <figcaption>Legacy</figcaption>
+        </figure>
+        <figure class="poem" data-tags="ocean">
+          <img src="../images/poetry/ocean/sea-summons.jpg" alt="Sea Summons" loading="lazy">
+          <figcaption>Sea Summons</figcaption>
+        </figure>
+        <figure class="poem" data-tags="miscellaneous">
+          <img src="../images/poetry/miscellaneous/the-artists-curse.jpg" alt="The Artists Curse" loading="lazy">
+          <figcaption>The Artist's Curse</figcaption>
+        </figure>
+        <figure class="poem" data-tags="miscellaneous">
+          <img src="../images/poetry/miscellaneous/art-is-not-for-keeping.jpg" alt="Art Is Not For Keeping" loading="lazy">
+          <figcaption>Art Is Not For Keeping</figcaption>
+        </figure>
+        <figure class="poem" data-tags="miscellaneous">
+          <img src="../images/poetry/miscellaneous/four-green.jpeg" alt="Four Green" loading="lazy">
+          <figcaption>Four Green</figcaption>
+        </figure>
+      </div>
+
+      <p class="empty-note" hidden>No poems match that filter yet — check back soon!</p>
 
       <nav class="button-container" aria-label="Site navigation">
         <a href="../index.html" class="button" aria-label="Return to home page">Back to Home</a>
       </nav>
     </main>
+    <script src="../js/poetry-filter.js"></script>
   </body>
 </html>
