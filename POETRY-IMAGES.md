@@ -27,9 +27,11 @@ Tags are one or more of: `political`, `sobriety`, `mental-health`, `ocean-theme`
 | `alysa-liu.jpg` | Alysa Liu | political | Yes |
 | `bigger-than-me.jpg` | Bigger Than Me | sobriety, mental-health | Yes |
 | `dancing-with-angels.jpg` | Dancing With Angels | sobriety, mental-health | Yes |
-| `bleary-eyed-to-the-sun.jpg` | Bleary Eyed To The Sun | sobriety, mental-health | Yes |
+| `bleary-eyed-to-the-sun_01.jpg` | Bleary Eyed To The Sun (print 1 of 2) | sobriety, mental-health | Yes |
+| `bleary-eyed-to-the-sun_02.jpg` | Bleary Eyed To The Sun (print 2 of 2) | sobriety, mental-health | Yes |
 | `newfound-happy-hour.jpg` | Newfound Happy Hour | sobriety, mental-health | Yes |
-| `the-moments-in-between.jpg` | The Moments In Between | sobriety, mental-health | Yes |
+| `the-moments-in-between_01.jpg` | The Moments In Between (print 1 of 2) | sobriety, mental-health | Yes |
+| `the-moments-in-between_02.jpg` | The Moments In Between (print 2 of 2) | sobriety, mental-health | Yes |
 | `addiction.jpg` | Addiction | sobriety | Yes |
 | `sinking.jpg` | Sinking | sobriety | Yes |
 | `from-me-to-you.jpg` | From Me to You | sobriety | Yes |
@@ -38,13 +40,16 @@ Tags are one or more of: `political`, `sobriety`, `mental-health`, `ocean-theme`
 | `twenty-months.jpg` | Twenty Months | sobriety | Yes |
 | `two-years.jpg` | Two Years | sobriety | Yes |
 | `thirty-months.jpg` | Thirty Months | sobriety | Yes |
-| `a-thousand-days.jpg` | A Thousand Days | sobriety | Yes |
+| `a-thousand-days_01.jpg` | A Thousand Days (print 1 of 2) | sobriety | Yes |
+| `a-thousand-days_02.jpg` | A Thousand Days (print 2 of 2) | sobriety | Yes |
 | `three-years.jpg` | Three Years | sobriety | Yes |
 | `four-years.jpg` | Four Years | sobriety | Yes |
 | `five-years.jpg` | Five Years | sobriety | Yes |
-| `two-thousand-days.jpg` | Two Thousand Days | sobriety | Yes |
+| `two-thousand-days_01.jpg` | Two Thousand Days (print 1 of 2) | sobriety | Yes |
+| `two-thousand-days_02.jpg` | Two Thousand Days (print 2 of 2) | sobriety | Yes |
 | `six-years.jpg` | Six Years | sobriety | Yes |
-| `seven-years.jpg` | Seven Years | sobriety | Yes |
+| `seven-years_01.jpg` | Seven Years (print 1 of 2) | sobriety | Yes |
+| `seven-years_02.jpg` | Seven Years (print 2 of 2) | sobriety | Yes |
 | `i-will-not-succumb.jpg` | I Will Not Succumb | mental-health | Yes |
 | `out-of-my-own-way.jpg` | Out Of My Own Way | mental-health | Yes |
 | `fade-away.jpg` | Fade Away | mental-health | Yes |
@@ -61,7 +66,9 @@ Tags are one or more of: `political`, `sobriety`, `mental-health`, `ocean-theme`
 | `sun-kissed.jpg` | Sun-Kissed | ocean-theme | Yes |
 | `one-step-at-a-time.jpg` | One Step At A Time | ocean-theme | Yes |
 | `to-dream.jpg` | To Dream | ocean-theme | Yes |
-| `legacy.jpg` | Legacy | ocean-theme | Yes |
+| `legacy_01.jpg` | Legacy (print 1 of 3) | ocean-theme | Yes |
+| `legacy_02.jpg` | Legacy (print 2 of 3) | ocean-theme | Yes |
+| `legacy_03.jpg` | Legacy (print 3 of 3 — features a photo of the poet) | ocean-theme | Yes |
 | `sea-summons.jpg` | Sea Summons | ocean-theme | Yes |
 | `sea-kissed.jpg` | Sea-Kissed | ocean-theme | Yes |
 | `waves.jpg` | Waves | ocean-theme | Yes |
@@ -90,9 +97,14 @@ Tags are one or more of: `political`, `sobriety`, `mental-health`, `ocean-theme`
 - `image0.jpeg` — byte-identical duplicate of the already-published `more-than-thoughts-and-prayers.jpg`.
 - `image16.jpeg` — a titleless pull-quote graphic ("Those who broke the walls...") pulled from the `reparations.jpg` poem, not a standalone poem.
 
+**Corrected on 2026-08-02 re-review:** an earlier pass through this same mental_health/sobriety/ocean_themed/miscellaneous batch skipped several images as "already-published duplicates" based on title matching alone, without comparing actual poem text. A closer side-by-side check (byte diff + manual read) found that most of those were NOT duplicates — they were revised re-exports of already-live poems with the `@SeaPoet.art` handle added (several live versions were missing it) and minor punctuation/capitalization normalization. Those have now been swapped in to replace the outdated live versions: `The Artist's Curse`, `Dancing With Angels`, `Sun-Kissed`, and `To Dream` were updated in place (same filename, revised content). `The Moments in Between`, `Bleary-Eyed to the Sun`, and `Legacy` came with multiple background-photo options for the same revised text — per the site owner, all variants are kept as separate `_01`/`_02`(/`_03`) prints rather than picking just one. The same applies to three new (not previously published) sobriety poems that had two photo options each: `A Thousand Days`, `Two Thousand Days`, and `Seven Years`.
+
+**Skipped from the 2026-08-02 political batch** (not added as gallery entries):
+- `image0.jpeg` — byte-identical duplicate of the already-published `more-than-thoughts-and-prayers.jpg` (verified byte-for-byte, confirmed identical, not a revision).
+- `image16.jpeg` — a titleless pull-quote graphic ("Those who broke the walls...") pulled from the `reparations.jpg` poem, not a standalone poem.
+
 **Skipped from the 2026-08-02 mental_health/sobriety/ocean_themed/miscellaneous batch** (69 images across 4 zips; not added as gallery entries):
-- Already-published duplicates re-exported with a different background photo: `The Moments in Between` (x2), `Bleary-Eyed to the Sun` (x2), `Legacy` (x3), plus single re-exports of `Here's Your F$cking Poem`, `Bigger Than Me`, `Newfound Happy Hour`, `Sea Summons`, `Sun-Kissed`, `To Dream`.
-- Within-batch duplicates (same poem, same background, uploaded twice): the second copies of `A Thousand Days`, `Two Thousand Days`, and `Seven Years` (sobriety batch).
+- True byte-identical duplicates needing no update: `Here's Your F$cking Poem`, `Bigger Than Me`, `Newfound Happy Hour`, `Sea Summons`.
 - A titleless pull-quote companion graphic excerpted from `The Artist's Curse`.
 - `Waiting Game` and `Serenity` were each uploaded into two different category zips (mental_health + miscellaneous, and mental_health + ocean_themed, respectively) — treated as intentional cross-tagging rather than duplicates; each is stored once and carries both tags.
 
@@ -100,4 +112,4 @@ The five original `sobriety-mental-health` poems (`bigger-than-me.jpg` and the f
 
 Pagination shows 10 poems per page (see `js/poetry-filter.js`); this table's "On page?" column tracks whether an image is wired into the gallery markup at all, not which page it lands on.
 
-_Last reviewed: 2026-08-02 — all images currently in `images/poetry/` are on the page (75 total)._
+_Last reviewed: 2026-08-02 — all images currently in `images/poetry/` are on the page (82 total, including multi-print variants)._

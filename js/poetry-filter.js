@@ -88,6 +88,7 @@
       prevButton.addEventListener('click', function() {
         currentPage -= 1;
         render();
+        scrollToTop();
       });
     }
 
@@ -95,10 +96,15 @@
       nextButton.addEventListener('click', function() {
         currentPage += 1;
         render();
+        scrollToTop();
       });
     }
 
     render();
+  }
+
+  function scrollToTop() {
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   }
 
   if (document.readyState === 'loading') {

@@ -738,7 +738,7 @@ img {
 }
 
 .gallery .poem figcaption {
-  margin-top: var(--spacing-xs);
+  margin-bottom: var(--spacing-xs);
   font-size: 15px;
   font-weight: 600;
   color: var(--heading-text);
