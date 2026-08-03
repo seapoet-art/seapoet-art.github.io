@@ -92,7 +92,7 @@ Tags are one or more of: `political`, `sobriety`, `mental-health`, `ocean-theme`
 | `the-heartbreaking-joy-of-mothering-teens.jpg` | The Heartbreaking Joy Of Mothering Teens | miscellaneous | Yes |
 | `miami-hoop-dreams.jpg` | Miami Hoop Dreams | miscellaneous | Yes |
 | `bunson.jpg` | Bunson | miscellaneous | Yes |
-| `four-green.jpeg` | Four Green | miscellaneous | Yes |
+| `four-green.jpeg` | Four Green | political | Yes |
 
 **Skipped from the 2026-08-02 political batch** (not added as gallery entries):
 - `image0.jpeg` — byte-identical duplicate of the already-published `more-than-thoughts-and-prayers.jpg` (verified byte-for-byte).
