@@ -6,7 +6,7 @@ Running list of what's in `images/poetry/` vs. what's actually wired into `conte
 
 Filenames use hyphens, not underscores (e.g. `sun-kissed.jpg`), except for numbered print variants of the same poem, which use an `_01`/`_02`/`_03` suffix (e.g. `legacy_01.jpg`).
 
-Tags are one or more of: `political`, `sobriety`, `mental-health`, `ocean-theme`, `miscellaneous` (space-separated in `data-tags` when a poem carries more than one). `sobriety` and `mental-health` are fully separate tags — the site owner has gone through and reassigned every poem to whichever single tag fits best, only combining tags where a poem is genuinely cross-themed (e.g. `Bigger Than Me`, `Serenity`, `Waiting Game`, `Here's Your F$cking Poem`).
+Tags are one or more of: `political`, `sobriety`, `mental-health`, `ocean-theme`, `miscellaneous` (space-separated in `data-tags` when a poem carries more than one). `sobriety` and `mental-health` are fully separate tags — the site owner has gone through and reassigned every poem to whichever single tag fits best. Most poems now carry exactly one tag; `Here's Your F$cking Poem` (political + mental-health) is the one remaining cross-tagged exception.
 
 | Image file | Poem title | Tags | On page? |
 |---|---|---|---|
@@ -55,12 +55,12 @@ Tags are one or more of: `political`, `sobriety`, `mental-health`, `ocean-theme`
 | `i-will-not-succumb.jpg` | I Will Not Succumb | mental-health | Yes |
 | `out-of-my-own-way.jpg` | Out Of My Own Way | mental-health | Yes |
 | `fade-away.jpg` | Fade Away | mental-health | Yes |
-| `waiting-game.jpg` | Waiting Game | mental-health, miscellaneous | Yes |
-| `bigger-than-me.jpg` | Bigger Than Me | mental-health, ocean-theme | Yes |
+| `waiting-game.jpg` | Waiting Game | mental-health | Yes |
+| `bigger-than-me.jpg` | Bigger Than Me | mental-health | Yes |
 | `i-just-need-to-walk.jpg` | I Just Need to Walk | mental-health | Yes |
 | `the-wisdom-to-know.jpg` | The Wisdom to Know | mental-health | Yes |
 | `behind-the-glass.jpg` | Behind the Glass | mental-health | Yes |
-| `serenity.jpg` | Serenity | mental-health, ocean-theme | Yes |
+| `serenity.jpg` | Serenity | mental-health | Yes |
 | `was-not-meant-to-be.jpg` | Was Not Meant to Be | mental-health | Yes |
 | `exhaustion.jpg` | Exhaustion | mental-health | Yes |
 | `nothing-but-it-all.jpg` | Nothing, But It All | mental-health | Yes |
